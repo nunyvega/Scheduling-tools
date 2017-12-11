@@ -22,30 +22,32 @@ default: return("No ID Found");
 
 
 
+
+
 /* Max number of support hours*/
 
 function maxHours(num){
   var maxResult;
   if(num===1){
-    maxResult="background-color:red;";
+    maxResult="1hMax";
   }
   else if (num===2){
-    maxResult="background-color:red;";
+    maxResult="2hMax";
   }
     else if (num===3){
-    maxResult="background-color:red;";
+    maxResult="3hMax";
   }
     else if (num===4){
-    maxResult="background-color:red;";
+    maxResult="4hMax";
   }
     else if (num===5){
-    maxResult="background-color:red;";
+    maxResult="5hMax";
   }
     else if (num===6){
-    maxResult="background-color:red;";
+    maxResult="6hMax";
   }
     else if (num===7){
-    maxResult="background-color:red;";
+    maxResult="7hMax";
   }
   else {
     return false;
@@ -59,13 +61,13 @@ function maxHours(num){
 function CSS(pref){
   var prefResult;
   if(pref==="Tickets"){
-    prefResult="font-color:blue;";
+    prefResult="background-color: rgba(217, 255, 102,0.4);";
   }
   else if(pref==="Live Chat"){
-    prefResult="font-color:blue;";
+    prefResult="background-color:rgba(190, 92, 251,0.2);";
   }
     else if(pref==="No particular preference"){
-    prefResult="font-color:blue;";
+      prefResult=" "
   }
   else{
     return false;
@@ -79,22 +81,22 @@ function CSS(pref){
 function chatHoursRow(num){
   var chatHoursResult;
   if(num===1){
-    chatHoursResult="background-color:red;";
+    chatHoursResult="1hRow;";
   }
   else if (num===2){
-    chatHoursResult="background-color:red;";
+    chatHoursResult="2HRow;";
   }
    else if (num===3){
-    chatHoursResult="background-color:red;";
+    chatHoursResult="3hRow;";
   }
    else if (num===4){
-    chatHoursResult="background-color:red;";
+    chatHoursResult="4hRow;";
   }
    else if (num===5){
-    chatHoursResult="background-color:red;";
+    chatHoursResult="5hRow;";
   }
    else if (num==="No particular preference"){
-    chatHoursResult="background-color:red;";
+    chatHoursResult="NoPrefHsRow ";
   }
   else {
     return false;
@@ -108,10 +110,10 @@ function chatHoursRow(num){
 function oneHourBlock(reply){
   var oneHourBlockResult;
   if (reply==="Yes"){
-    oneHourBlockResult="color:red;";
+    oneHourBlockResult="1h✓;";
   }
   else if(reply==="No"){
-    oneHourBlockResult="color: blue;";
+    oneHourBlockResult="1hX;";
   }
   else {
   return false;
@@ -125,10 +127,10 @@ function oneHourBlock(reply){
 function fourHoursBlock(reply){
   var fourHoursBlockResult;
   if (reply==="Yes"){
-    fourHoursBlockResult="color:red;";
+    fourHoursBlockResult="4h✓;";
   }
   else if(reply==="No"){
-    fourHoursBlockResult="color: blue;";
+    fourHoursBlockResult="4hX;";
   }
   else {
   return false;
@@ -142,13 +144,13 @@ function fourHoursBlock(reply){
 function business(reply){
   var businessResult;
   if (reply==="Full time"){
-    businessResult="color:red;";
+    businessResult="FT 1:1";
   }
     else if(reply==="Part time"){
-    businessResult="color: green;";
+      businessResult="PT 1:1";
   }
   else if(reply==="No"){
-    businessResult="color: blue;";
+    businessResult="NoBiz";
   }
   else {
   return false;
@@ -160,12 +162,12 @@ function business(reply){
 /* Team Lead */
 
 function teamLead(reply){
-  var teamLeadResult;
+  var teamLeadResult="border-left: 20px solid ";
   if (reply==="Yes"){
-    teamLeadResult="color:red;";
+    teamLeadResult +="red;";
   }
   else if(reply==="No"){
-    teamLeadResult="color: blue;";
+    teamLeadResult +="green;";
   }
   else {
   return false;
@@ -179,10 +181,10 @@ function teamLead(reply){
 function pressableAmbassador(reply){
   var paResult;
   if (reply==="Yes"){
-    paResult="color:red;";
+    paResult="PA";
   }
   else if(reply==="No"){
-    paResult="color: blue;";
+    paResult="";
   }
   else {
   return false;
