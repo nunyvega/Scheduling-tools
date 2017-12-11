@@ -22,8 +22,6 @@ default: return("No ID Found");
 
 
 
-
-
 /* Max number of support hours*/
 
 function maxHours(num){
@@ -61,13 +59,13 @@ function maxHours(num){
 function CSS(pref){
   var prefResult;
   if(pref==="Tickets"){
-    prefResult="background-color: rgba(217, 255, 102,0.4);";
+    prefResult="background-color: rgba(217, 255, 102,0.4) !important;";
   }
   else if(pref==="Live Chat"){
-    prefResult="background-color:rgba(190, 92, 251,0.2);";
+    prefResult="background-color:rgba(190, 92, 251,0.2) !important;";
   }
     else if(pref==="No particular preference"){
-      prefResult=" "
+      prefResult=""
   }
   else{
     return false;
@@ -81,22 +79,22 @@ function CSS(pref){
 function chatHoursRow(num){
   var chatHoursResult;
   if(num===1){
-    chatHoursResult="1hRow;";
+    chatHoursResult="1hRow";
   }
   else if (num===2){
-    chatHoursResult="2HRow;";
+    chatHoursResult="2HRow";
   }
    else if (num===3){
-    chatHoursResult="3hRow;";
+    chatHoursResult="3hRow";
   }
    else if (num===4){
-    chatHoursResult="4hRow;";
+    chatHoursResult="4hRow";
   }
    else if (num===5){
-    chatHoursResult="5hRow;";
+    chatHoursResult="5hRow";
   }
    else if (num==="No particular preference"){
-    chatHoursResult="NoPrefHsRow ";
+    chatHoursResult="";
   }
   else {
     return false;
@@ -110,10 +108,10 @@ function chatHoursRow(num){
 function oneHourBlock(reply){
   var oneHourBlockResult;
   if (reply==="Yes"){
-    oneHourBlockResult="1h✓;";
+    oneHourBlockResult="1h✓";
   }
   else if(reply==="No"){
-    oneHourBlockResult="1hX;";
+    oneHourBlockResult="1hX";
   }
   else {
   return false;
@@ -127,10 +125,10 @@ function oneHourBlock(reply){
 function fourHoursBlock(reply){
   var fourHoursBlockResult;
   if (reply==="Yes"){
-    fourHoursBlockResult="4h✓;";
+    fourHoursBlockResult="4h✓";
   }
   else if(reply==="No"){
-    fourHoursBlockResult="4hX;";
+    fourHoursBlockResult="4hX";
   }
   else {
   return false;
@@ -144,13 +142,13 @@ function fourHoursBlock(reply){
 function business(reply){
   var businessResult;
   if (reply==="Full time"){
-    businessResult="FT 1:1";
+    businessResult="border-right:  5px solid #5e3cc4 !important;";
   }
     else if(reply==="Part time"){
-      businessResult="PT 1:1";
+      businessResult="border-right:  5px dotted #5e3cc4 !important;";
   }
   else if(reply==="No"){
-    businessResult="NoBiz";
+    businessResult="";
   }
   else {
   return false;
@@ -164,10 +162,10 @@ function business(reply){
 function teamLead(reply){
   var teamLeadResult="border-left: 20px solid ";
   if (reply==="Yes"){
-    teamLeadResult +="red;";
+    teamLeadResult +="red !important;";
   }
   else if(reply==="No"){
-    teamLeadResult +="green;";
+    teamLeadResult +="green !important;";
   }
   else {
   return false;
@@ -191,3 +189,60 @@ function pressableAmbassador(reply){
   }
   return paResult;
 }
+
+
+
+
+/* Specific only ticket Hours request: converts input to an array of numbers, then loops through the array to see which numbers are selected, and through the 24 hours of the day */
+
+
+function onlyTickets(nameID, numbers2){  
+  if (numbers2.length === 0){ return "";}
+  var numbers = numbers2.toString();
+  var numsArray = numbers.split(',').map(Number);
+  var arrayLength = numsArray.length;
+  var newcode = [];
+	var arrayIndex= 0;
+     for (var i = 0; i < arrayLength; i++) {
+       for (var hours = 0; hours < 24; hours++) {
+         if  (numsArray[i] === hours) {
+           newcode[arrayIndex] = ("#d_"+nameID + ".day.dcol"+ hours +" ");
+			arrayIndex++;
+			
+         }   
+}
+}
+  var averga = newcode.toString();   /* Convert array to string */
+  var resultOnlyTickets = averga+"{background-image:linear-gradient(transparent 50%,rgba(190,75,219,.2)50%);background-size:9px 9px;}";
+ return resultOnlyTickets;
+}
+
+
+
+/* Specific hours No BIZ 1:1 request */
+
+function noBiz(nameID, numbers2){  
+  if (numbers2.length === 0){ return "";}
+  var numbers = numbers2.toString();
+  var numsArray = numbers.split(',').map(Number);
+  var arrayLength = numsArray.length;
+  var newcode = [];
+  var arrayIndex= 0;
+  
+     for (var i = 0; i < arrayLength; i++) {
+       for (var hours = 0; hours < 24; hours++) {
+         if  (numsArray[i] === hours) {
+           newcode[arrayIndex] = ("#d_"+nameID + ".day.dcol"+ hours +" ");
+			arrayIndex++;
+			
+         }   
+}
+}
+  var averga = newcode.toString();   /* Convert array to string */
+  var resultBusiness = averga+"{background-image:linear-gradient(transparent 50%,rgba(190,75,219,.2)50%);background-size:9px 9px;}";
+ return resultBusiness;
+}
+
+
+
+
