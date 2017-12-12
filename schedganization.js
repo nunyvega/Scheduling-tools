@@ -21,10 +21,10 @@ default: return("No ID Found");
 
 
 
-
 /* Max number of support hours*/
 
 function maxHours(num){
+  Utilities.sleep(Math.random() * 5000);
   var maxResult;
   if(num===1){
     maxResult="1hMax";
@@ -47,6 +47,9 @@ function maxHours(num){
     else if (num===7){
     maxResult="7hMax";
   }
+     else if (num===8){
+    maxResult="8hMax";
+  }
   else {
     return false;
   }
@@ -57,6 +60,7 @@ function maxHours(num){
 /* Preferred type of work */
 
 function CSS(pref){
+  Utilities.sleep(Math.random() * 5000);
   var prefResult;
   if(pref==="Tickets"){
     prefResult="background-color: rgba(217, 255, 102,0.4) !important;";
@@ -77,6 +81,7 @@ function CSS(pref){
 /* Chat hours in a row */
 
 function chatHoursRow(num){
+  Utilities.sleep(Math.random() * 5000);
   var chatHoursResult;
   if(num===1){
     chatHoursResult="1hRow";
@@ -106,6 +111,7 @@ function chatHoursRow(num){
 /* 1 hour block */
 
 function oneHourBlock(reply){
+  Utilities.sleep(Math.random() * 5000);
   var oneHourBlockResult;
   if (reply==="Yes"){
     oneHourBlockResult="1h✓";
@@ -123,6 +129,7 @@ function oneHourBlock(reply){
 /* 4 hours in a row*/
 
 function fourHoursBlock(reply){
+  Utilities.sleep(Math.random() * 5000);
   var fourHoursBlockResult;
   if (reply==="Yes"){
     fourHoursBlockResult="4h✓";
@@ -140,6 +147,7 @@ function fourHoursBlock(reply){
 /* Business 1:1 */
 
 function business(reply){
+  Utilities.sleep(Math.random() * 5000);
   var businessResult;
   if (reply==="Full time"){
     businessResult="border-right:  5px solid #5e3cc4 !important;";
@@ -160,6 +168,7 @@ function business(reply){
 /* Team Lead */
 
 function teamLead(reply){
+  Utilities.sleep(Math.random() * 5000);
   var teamLeadResult="border-left: 20px solid ";
   if (reply==="Yes"){
     teamLeadResult +="red !important;";
@@ -177,6 +186,7 @@ function teamLead(reply){
 /* Pressable Ambassador */
 
 function pressableAmbassador(reply){
+  Utilities.sleep(Math.random() * 5000);
   var paResult;
   if (reply==="Yes"){
     paResult="PA";
@@ -197,6 +207,7 @@ function pressableAmbassador(reply){
 
 
 function onlyTickets(nameID, numbers2){  
+  Utilities.sleep(Math.random() * 5000);
   if (numbers2.length === 0){ return "";}
   var numbers = numbers2.toString();
   var numsArray = numbers.split(',').map(Number);
@@ -213,7 +224,7 @@ function onlyTickets(nameID, numbers2){
 }
 }
   var averga = newcode.toString();   /* Convert array to string */
-  var resultOnlyTickets = averga+"{background-image:linear-gradient(transparent 50%,rgba(190,75,219,.2)50%);background-size:9px 9px;}";
+  var resultOnlyTickets = averga+"{background: rgba(253, 126, 20, 0.5)important!;}";
  return resultOnlyTickets;
 }
 
@@ -222,6 +233,7 @@ function onlyTickets(nameID, numbers2){
 /* Specific hours No BIZ 1:1 request */
 
 function noBiz(nameID, numbers2){  
+  Utilities.sleep(Math.random() * 5000);
   if (numbers2.length === 0){ return "";}
   var numbers = numbers2.toString();
   var numsArray = numbers.split(',').map(Number);
@@ -239,9 +251,13 @@ function noBiz(nameID, numbers2){
 }
 }
   var averga = newcode.toString();   /* Convert array to string */
-  var resultBusiness = averga+"{background-image:linear-gradient(transparent 50%,rgba(190,75,219,.2)50%);background-size:9px 9px;}";
+  var resultBusiness = averga+"{background: rgba(190,75,219,.2);}";
  return resultBusiness;
 }
+
+
+
+
 
 
 
