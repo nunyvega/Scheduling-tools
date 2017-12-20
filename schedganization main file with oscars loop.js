@@ -1,3 +1,13 @@
+/* Usando un loop que creó Oscar pongo de input un rango de valores, y el loop procesa cada uno de ellos,
+y me llena una columna completa con las respuestas.
+Es decir, pongo de input todas las respuestas sobre cierta pregunta, y las procesa a todas juntas.
+Lo que quiero ahora es crear una sola funcion gigante que use de input todas las respuestas de un HE, 
+y dé directamente el resultado de su codigo CSS, y loopear esa formula por cada HE.
+*/
+
+
+
+
 /* Oscar's Original Loop */
 
 function leerYEscribirVariasCeldas( range ) {
@@ -22,7 +32,7 @@ function leerYEscribirVariasCeldas( range ) {
 
 
 
-/* Oscar's Loop name to ID */
+/* Oscar's Loop using the function that changes a name to its ID */
 
 function ID2 ( range ) {
   const resultado = [];
@@ -45,7 +55,6 @@ function ID2 ( range ) {
       resultado[ i ][ j ] = idToReturn;        
     }
   }
-  
   //Devolvés resultado y mágicamente llena varias celdas
   return resultado;
 }
@@ -144,7 +153,7 @@ function CSS2( range ) {
 
 
 
-/* Oscar's Loop Hours in a row*/
+/* Oscar's Loop for preferred number of Hours in a row*/
 
 function chatHoursRow2( range ) {
   const resultado = [];
