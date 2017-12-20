@@ -21,7 +21,7 @@ function leerYEscribirVariasCeldas( range ) {
     for( j = 0; j < range[ i ].length; j++ ) {
       // Acá transformas el input en lo que quieras, o whatever
       // Queda acumulado en `resultado`
-      resultado[ i ][ j ] = range[ i ][ j ] + 12 ;
+      resultado[ i ][ j ] = range[ i ][ j ] + 12 ; //ejemplo de un script cualquiera.
     }
   }
   //Devolvés resultado y mágicamente llena varias celdas
