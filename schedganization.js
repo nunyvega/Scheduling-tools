@@ -31,33 +31,34 @@ function myFunction(nameToIdInput, maxHoursInput, prefWorkInput,chatHoursInput, 
   
   
   
+  
   /* Max number of support hours*/
   
   
   var maxResult;
   if(maxHoursInput==1){
-    maxResult="1hMax";
+    maxResult="1hMax ";
   }
   else if (maxHoursInput==2){
-    maxResult="2hMax";
+    maxResult="2hMax ";
   }
   else if (maxHoursInput==3){
-    maxResult="3hMax";
+    maxResult="3hMax ";
   }
   else if (maxHoursInput==4){
-    maxResult="4hMax";
+    maxResult="4hMax ";
   }
   else if (maxHoursInput==5){
-    maxResult="5hMax";
+    maxResult="5hMax ";
   }
   else if (maxHoursInput==6){
-    maxResult="6hMax";
+    maxResult="6hMax ";
   }
   else if (maxHoursInput==7){
-    maxResult="7hMax";
+    maxResult="7hMax ";
   }
   else if (maxHoursInput==8){
-    maxResult="8hMax";
+    maxResult="8hMax ";
   }
   else {
     maxResult= "ErrorInMaxHours";
@@ -70,10 +71,10 @@ function myFunction(nameToIdInput, maxHoursInput, prefWorkInput,chatHoursInput, 
   
   var prefResult;
   if(prefWorkInput=="Tickets"){
-    prefResult="background-color: rgba(217, 255, 102,0.4) !important;";
+    prefResult="background-color: rgba(253, 126, 20, 0.13) !important;";
   }
   else if(prefWorkInput=="Live Chat"){
-    prefResult="background-color:rgba(190, 92, 251,0.2) !important;";
+    prefResult="background-color:rgba(190, 92, 251,0.1) !important;";
   }
   else if(prefWorkInput=="No particular preference"){
     prefResult=""
@@ -87,19 +88,19 @@ function myFunction(nameToIdInput, maxHoursInput, prefWorkInput,chatHoursInput, 
   
   var chatHoursResult;
   if(chatHoursInput==1){
-    chatHoursResult="1hRow";
+    chatHoursResult="1hRow ";
   }
   else if (chatHoursInput==2){
-    chatHoursResult="2HRow";
+    chatHoursResult="2HRow ";
   }
   else if (chatHoursInput==3){
-    chatHoursResult="3hRow";
+    chatHoursResult="3hRow ";
   }
   else if (chatHoursInput==4){
-    chatHoursResult="4hRow";
+    chatHoursResult="4hRow ";
   }
   else if (chatHoursInput==5){
-    chatHoursResult="5hRow";
+    chatHoursResult="5hRow ";
   }
   else if (chatHoursInput=="No particular preference"){
     chatHoursResult="";
@@ -116,10 +117,10 @@ function myFunction(nameToIdInput, maxHoursInput, prefWorkInput,chatHoursInput, 
   
   var oneHourBlockResult;
   if (oneHourBlockInput=="Yes"){
-    oneHourBlockResult="1h✓";
+    oneHourBlockResult="1h✓ ";
   }
   else if(oneHourBlockInput=="No"){
-    oneHourBlockResult="1hX";
+    oneHourBlockResult="1hX ";
   }
   else {
     oneHourBlockResult="Error in One Hour Block Result";
@@ -151,7 +152,7 @@ function myFunction(nameToIdInput, maxHoursInput, prefWorkInput,chatHoursInput, 
     businessResult="border-right:  5px solid #5e3cc4 !important;";
   }
   else if(businessInput=="Part time"){
-    businessResult="border-right:  5px dotted #5e3cc4 !important;";
+    businessResult="border-right: 5px dashed #5e3cc4 !important;";
   }
   else if(businessInput=="No"){
     businessResult="";
@@ -167,14 +168,14 @@ function myFunction(nameToIdInput, maxHoursInput, prefWorkInput,chatHoursInput, 
   
   
   if (teamLeadInput=="Yes"){
-   var teamLeadResult ="border-left: 20px solid red !important;";
+    var teamLeadResult ="border-left: 10px solid #6cd6fc !important;";
   }
   else if(teamLeadInput=="No"){
     var teamLeadResult ="";
   }
   else {
     var teamLeadResult= "Error in team Lead Result"
-  }
+    }
   
   
   
@@ -183,7 +184,7 @@ function myFunction(nameToIdInput, maxHoursInput, prefWorkInput,chatHoursInput, 
   
   var paResult;
   if (pressableAmbassadorInput=="Yes"){
-    paResult="PA";
+    paResult="PA ";
   }
   else if(pressableAmbassadorInput=="No"){
     paResult="";
@@ -201,149 +202,149 @@ function myFunction(nameToIdInput, maxHoursInput, prefWorkInput,chatHoursInput, 
   //Monday
   if (onlyTicketsInput1.length == 0){ var resultOnlyTickets1 = " ";}
   else{
-  var numbers = onlyTicketsInput1.toString();
-  var numsArray = numbers.split(',').map(Number);
-  var arrayLength = numsArray.length;
-  var newcode = [];
-  var arrayIndex= 0;
-  for (var i = 0; i < arrayLength; i++) {
-    for (var hours = 0; hours < 24; hours++) {
-      if  (numsArray[i] == hours) {
-        newcode[arrayIndex] = ("#d_"+nameToIdResult + ".day.dcol"+ hours +" ");
-        arrayIndex++;
-        
-      }   
+    var numbers = onlyTicketsInput1.toString();
+    var numsArray = numbers.split(',').map(Number);
+    var arrayLength = numsArray.length;
+    var newcode = [];
+    var arrayIndex= 0;
+    for (var i = 0; i < arrayLength; i++) {
+      for (var hours = 0; hours < 24; hours++) {
+        if  (numsArray[i] == hours) {
+          newcode[arrayIndex] = ("#d_"+nameToIdResult + ".day.dcol"+ hours +" ");
+          arrayIndex++;
+          
+        }   
+      }
     }
+    var newCodeInString = newcode.toString();   /* Convert array to string */
+    var resultOnlyTickets1 = newCodeInString +"{background: rgba(253, 126, 20, 0.2)!important;}";
   }
-  var newCodeInString = newcode.toString();   /* Convert array to string */
-  var resultOnlyTickets1 = newCodeInString +"{background: rgba(253, 126, 20, 0.5)!important;}";
-   }
   
   //Tuesday
   if (onlyTicketsInput2.length == 0){ var resultOnlyTickets2 = " ";}
   else {
-  var numbers = onlyTicketsInput2.toString();
-  var numsArray = numbers.split(',').map(Number);
-  var arrayLength = numsArray.length;
-  var newcode = [];
-  var arrayIndex= 0;
-  for (var i = 0; i < arrayLength; i++) {
-    for (var hours = 0; hours < 24; hours++) {
-      if  (numsArray[i] == hours) {
-        newcode[arrayIndex] = ("#d_"+nameToIdResult + ".day.dcol"+ hours +" ");
-        arrayIndex++;
-        
-      }   
+    var numbers = onlyTicketsInput2.toString();
+    var numsArray = numbers.split(',').map(Number);
+    var arrayLength = numsArray.length;
+    var newcode = [];
+    var arrayIndex= 0;
+    for (var i = 0; i < arrayLength; i++) {
+      for (var hours = 0; hours < 24; hours++) {
+        if  (numsArray[i] == hours) {
+          newcode[arrayIndex] = ("#d_"+nameToIdResult + ".day.dcol"+ hours +" ");
+          arrayIndex++;
+          
+        }   
+      }
     }
-  }
-  var newCodeInString = newcode.toString();   /* Convert array to string */
-  var resultOnlyTickets2 = newCodeInString +"{background: rgba(253, 126, 20, 0.5)!important;}";
+    var newCodeInString = newcode.toString();   /* Convert array to string */
+    var resultOnlyTickets2 = newCodeInString +"{background: rgba(253, 126, 20, 0.2)!important;}";
   }
   
   //Wednesday
   if (onlyTicketsInput3.length == 0){  var resultOnlyTickets3 = " ";}
   else{
     var numbers = onlyTicketsInput3.toString();
-  var numsArray = numbers.split(',').map(Number);
-  var arrayLength = numsArray.length;
-  var newcode = [];
-  var arrayIndex= 0;
-  for (var i = 0; i < arrayLength; i++) {
-    for (var hours = 0; hours < 24; hours++) {
-      if  (numsArray[i] == hours) {
-        newcode[arrayIndex] = ("#d_"+nameToIdResult + ".day.dcol"+ hours +" ");
-        arrayIndex++;
-        
-      }   
+    var numsArray = numbers.split(',').map(Number);
+    var arrayLength = numsArray.length;
+    var newcode = [];
+    var arrayIndex= 0;
+    for (var i = 0; i < arrayLength; i++) {
+      for (var hours = 0; hours < 24; hours++) {
+        if  (numsArray[i] == hours) {
+          newcode[arrayIndex] = ("#d_"+nameToIdResult + ".day.dcol"+ hours +" ");
+          arrayIndex++;
+          
+        }   
+      }
     }
-  }
-  var newCodeInString = newcode.toString();   /* Convert array to string */
-  var resultOnlyTickets3 = newCodeInString +"{background: rgba(253, 126, 20, 0.5)!important;}";
+    var newCodeInString = newcode.toString();   /* Convert array to string */
+    var resultOnlyTickets3 = newCodeInString +"{background: rgba(253, 126, 20, 0.2)!important;}";
   }
   
   //Thursday
   if (onlyTicketsInput4.length == 0){ var resultOnlyTickets4 = " ";}
   else{
-  var numbers = onlyTicketsInput4.toString();
-  var numsArray = numbers.split(',').map(Number);
-  var arrayLength = numsArray.length;
-  var newcode = [];
-  var arrayIndex= 0;
-  for (var i = 0; i < arrayLength; i++) {
-    for (var hours = 0; hours < 24; hours++) {
-      if  (numsArray[i] == hours) {
-        newcode[arrayIndex] = ("#d_"+nameToIdResult + ".day.dcol"+ hours +" ");
-        arrayIndex++;
-        
-      }   
+    var numbers = onlyTicketsInput4.toString();
+    var numsArray = numbers.split(',').map(Number);
+    var arrayLength = numsArray.length;
+    var newcode = [];
+    var arrayIndex= 0;
+    for (var i = 0; i < arrayLength; i++) {
+      for (var hours = 0; hours < 24; hours++) {
+        if  (numsArray[i] == hours) {
+          newcode[arrayIndex] = ("#d_"+nameToIdResult + ".day.dcol"+ hours +" ");
+          arrayIndex++;
+          
+        }   
+      }
     }
-  }
     
-  var newCodeInString = newcode.toString();   /* Convert array to string */
-  var resultOnlyTickets4 = newCodeInString +"{background: rgba(253, 126, 20, 0.5)!important;}";
+    var newCodeInString = newcode.toString();   /* Convert array to string */
+    var resultOnlyTickets4 = newCodeInString +"{background: rgba(253, 126, 20, 0.2)!important;}";
   }
   
   //Friday
   if (onlyTicketsInput5.length == 0) {var resultOnlyTickets5 = " ";}
   else{
     var numbers = onlyTicketsInput5.toString();
-  var numsArray = numbers.split(',').map(Number);
-  var arrayLength = numsArray.length;
-  var newcode = [];
-  var arrayIndex= 0;
-  for (var i = 0; i < arrayLength; i++) {
-    for (var hours = 0; hours < 24; hours++) {
-      if  (numsArray[i] == hours) {
-        newcode[arrayIndex] = ("#d_"+nameToIdResult + ".day.dcol"+ hours +" ");
-        arrayIndex++;
-        
-      }   
+    var numsArray = numbers.split(',').map(Number);
+    var arrayLength = numsArray.length;
+    var newcode = [];
+    var arrayIndex= 0;
+    for (var i = 0; i < arrayLength; i++) {
+      for (var hours = 0; hours < 24; hours++) {
+        if  (numsArray[i] == hours) {
+          newcode[arrayIndex] = ("#d_"+nameToIdResult + ".day.dcol"+ hours +" ");
+          arrayIndex++;
+          
+        }   
+      }
     }
-  }
-  var newCodeInString = newcode.toString();   /* Convert array to string */
-  var resultOnlyTickets5 = newCodeInString +"{background: rgba(253, 126, 20, 0.5)!important;}";
+    var newCodeInString = newcode.toString();   /* Convert array to string */
+    var resultOnlyTickets5 = newCodeInString +"{background: rgba(253, 126, 20, 0.2)!important;}";
   }
   
   //Saturday
   if (onlyTicketsInput6.length == 0){  var resultOnlyTickets6 = " ";}
   else{
-  var numbers = onlyTicketsInput6.toString();
-  var numsArray = numbers.split(',').map(Number);
-  var arrayLength = numsArray.length;
-  var newcode = [];
-  var arrayIndex= 0;
-  for (var i = 0; i < arrayLength; i++) {
-    for (var hours = 0; hours < 24; hours++) {
-      if  (numsArray[i] == hours) {
-        newcode[arrayIndex] = ("#d_"+nameToIdResult + ".day.dcol"+ hours +" ");
-        arrayIndex++;
-        
-      }   
+    var numbers = onlyTicketsInput6.toString();
+    var numsArray = numbers.split(',').map(Number);
+    var arrayLength = numsArray.length;
+    var newcode = [];
+    var arrayIndex= 0;
+    for (var i = 0; i < arrayLength; i++) {
+      for (var hours = 0; hours < 24; hours++) {
+        if  (numsArray[i] == hours) {
+          newcode[arrayIndex] = ("#d_"+nameToIdResult + ".day.dcol"+ hours +" ");
+          arrayIndex++;
+          
+        }   
+      }
     }
-  }
-  var newCodeInString = newcode.toString();   /* Convert array to string */
-  var resultOnlyTickets6 = newCodeInString +"{background: rgba(253, 126, 20, 0.5)!important;}";
+    var newCodeInString = newcode.toString();   /* Convert array to string */
+    var resultOnlyTickets6 = newCodeInString +"{background: rgba(253, 126, 20, 0.2)!important;}";
   }
   
   //Sunday
   if (onlyTicketsInput7.length == 0){  var resultOnlyTickets7 = " ";}
   else{
     var numbers = onlyTicketsInput7.toString();
-  var numsArray = numbers.split(',').map(Number);
-  var arrayLength = numsArray.length;
-  var newcode = [];
-  var arrayIndex= 0;
-  for (var i = 0; i < arrayLength; i++) {
-    for (var hours = 0; hours < 24; hours++) {
-      if  (numsArray[i] == hours) {
-        newcode[arrayIndex] = ("#d_"+nameToIdResult + ".day.dcol"+ hours +" ");
-        arrayIndex++;
-        
-      }   
+    var numsArray = numbers.split(',').map(Number);
+    var arrayLength = numsArray.length;
+    var newcode = [];
+    var arrayIndex= 0;
+    for (var i = 0; i < arrayLength; i++) {
+      for (var hours = 0; hours < 24; hours++) {
+        if  (numsArray[i] == hours) {
+          newcode[arrayIndex] = ("#d_"+nameToIdResult + ".day.dcol"+ hours +" ");
+          arrayIndex++;
+          
+        }   
+      }
     }
-  }
-  var newCodeInString = newcode.toString();   /* Convert array to string */
-  var resultOnlyTickets7 = newCodeInString +"{background: rgba(253, 126, 20, 0.5)!important;}";
+    var newCodeInString = newcode.toString();   /* Convert array to string */
+    var resultOnlyTickets7 = newCodeInString +"{background: rgba(253, 126, 20, 0.2)!important;}";
   }
   
   
@@ -354,133 +355,133 @@ function myFunction(nameToIdInput, maxHoursInput, prefWorkInput,chatHoursInput, 
   //Monday
   if (noBizInput1.length == 0) {var resultNoBiz1 = " ";}
   else{
-  var numbers = noBizInput1.toString();
-  var numsArray = numbers.split(',').map(Number);
-  var arrayLength = numsArray.length;
-  var newcode = [];
-  var arrayIndex= 0;
-  
-  for (var i = 0; i < arrayLength; i++) {
-    for (var hours = 0; hours < 24; hours++) {
-      if  (numsArray[i] == hours) {
-        newcode[arrayIndex] = ("#d_"+nameToIdResult + ".day.dcol"+ hours +" ");
-        arrayIndex++;
-        
-      }   
+    var numbers = noBizInput1.toString();
+    var numsArray = numbers.split(',').map(Number);
+    var arrayLength = numsArray.length;
+    var newcode = [];
+    var arrayIndex= 0;
+    
+    for (var i = 0; i < arrayLength; i++) {
+      for (var hours = 0; hours < 24; hours++) {
+        if  (numsArray[i] == hours) {
+          newcode[arrayIndex] = ("#d_"+nameToIdResult + ".day.dcol"+ hours +" ");
+          arrayIndex++;
+          
+        }   
+      }
     }
-  }
-  var newCodeInString = newcode.toString();   /* Convert array to string */
-  var resultNoBiz1 = newCodeInString+"{background: rgba(190,75,219,.2);}";
+    var newCodeInString = newcode.toString();   /* Convert array to string */
+    var resultNoBiz1 = newCodeInString+"{background: rgba(190,75,219,.1);}";
   }
   
   //Tuesday
   if (noBizInput2.length == 0)  {var resultNoBiz2 = " ";}
   else{
-  var numbers = noBizInput2.toString();
-  var numsArray = numbers.split(',').map(Number);
-  var arrayLength = numsArray.length;
-  var newcode = [];
-  var arrayIndex= 0;
-  
-  for (var i = 0; i < arrayLength; i++) {
-    for (var hours = 0; hours < 24; hours++) {
-      if  (numsArray[i] == hours) {
-        newcode[arrayIndex] = ("#d_"+nameToIdResult + ".day.dcol"+ hours +" ");
-        arrayIndex++;
-        
-      }   
+    var numbers = noBizInput2.toString();
+    var numsArray = numbers.split(',').map(Number);
+    var arrayLength = numsArray.length;
+    var newcode = [];
+    var arrayIndex= 0;
+    
+    for (var i = 0; i < arrayLength; i++) {
+      for (var hours = 0; hours < 24; hours++) {
+        if  (numsArray[i] == hours) {
+          newcode[arrayIndex] = ("#d_"+nameToIdResult + ".day.dcol"+ hours +" ");
+          arrayIndex++;
+          
+        }   
+      }
     }
-  }
-  var newCodeInString = newcode.toString();   /* Convert array to string */
-  var resultNoBiz2 = newCodeInString+"{background: rgba(190,75,219,.2);}";
+    var newCodeInString = newcode.toString();   /* Convert array to string */
+    var resultNoBiz2 = newCodeInString+"{background: rgba(190,75,219,.1);}";
   }
   
   //Wednesday
   if (noBizInput3.length == 0) {var resultNoBiz3 = " ";}
   else{
-  var numbers = noBizInput3.toString();
-  var numsArray = numbers.split(',').map(Number);
-  var arrayLength = numsArray.length;
-  var newcode = [];
-  var arrayIndex= 0;
-  
-  for (var i = 0; i < arrayLength; i++) {
-    for (var hours = 0; hours < 24; hours++) {
-      if  (numsArray[i] == hours) {
-        newcode[arrayIndex] = ("#d_"+nameToIdResult + ".day.dcol"+ hours +" ");
-        arrayIndex++;
-        
-      }   
+    var numbers = noBizInput3.toString();
+    var numsArray = numbers.split(',').map(Number);
+    var arrayLength = numsArray.length;
+    var newcode = [];
+    var arrayIndex= 0;
+    
+    for (var i = 0; i < arrayLength; i++) {
+      for (var hours = 0; hours < 24; hours++) {
+        if  (numsArray[i] == hours) {
+          newcode[arrayIndex] = ("#d_"+nameToIdResult + ".day.dcol"+ hours +" ");
+          arrayIndex++;
+          
+        }   
+      }
     }
-  }
-  var newCodeInString = newcode.toString();   /* Convert array to string */
-  var resultNoBiz3 = newCodeInString+"{background: rgba(190,75,219,.2);}";
+    var newCodeInString = newcode.toString();   /* Convert array to string */
+    var resultNoBiz3 = newCodeInString+"{background: rgba(190,75,219,.1);}";
   }
   
   //Thursday
   if (noBizInput4.length == 0) {var resultNoBiz4 = " ";}
   else{
-  var numbers = noBizInput4.toString();
-  var numsArray = numbers.split(',').map(Number);
-  var arrayLength = numsArray.length;
-  var newcode = [];
-  var arrayIndex= 0;
-  
-  for (var i = 0; i < arrayLength; i++) {
-    for (var hours = 0; hours < 24; hours++) {
-      if  (numsArray[i] == hours) {
-        newcode[arrayIndex] = ("#d_"+nameToIdResult + ".day.dcol"+ hours +" ");
-        arrayIndex++;
-        
-      }   
+    var numbers = noBizInput4.toString();
+    var numsArray = numbers.split(',').map(Number);
+    var arrayLength = numsArray.length;
+    var newcode = [];
+    var arrayIndex= 0;
+    
+    for (var i = 0; i < arrayLength; i++) {
+      for (var hours = 0; hours < 24; hours++) {
+        if  (numsArray[i] == hours) {
+          newcode[arrayIndex] = ("#d_"+nameToIdResult + ".day.dcol"+ hours +" ");
+          arrayIndex++;
+          
+        }   
+      }
     }
-  }
-  var newCodeInString = newcode.toString();   /* Convert array to string */
-  var resultNoBiz4 = newCodeInString+"{background: rgba(190,75,219,.2);}";
+    var newCodeInString = newcode.toString();   /* Convert array to string */
+    var resultNoBiz4 = newCodeInString+"{background: rgba(190,75,219,.1);}";
   }
   
   //Friday
   if (noBizInput5.length == 0) {var resultNoBiz5 = " ";}
   else{
-  var numbers = noBizInput5.toString();
-  var numsArray = numbers.split(',').map(Number);
-  var arrayLength = numsArray.length;
-  var newcode = [];
-  var arrayIndex= 0;
-  
-  for (var i = 0; i < arrayLength; i++) {
-    for (var hours = 0; hours < 24; hours++) {
-      if  (numsArray[i] == hours) {
-        newcode[arrayIndex] = ("#d_"+nameToIdResult + ".day.dcol"+ hours +" ");
-        arrayIndex++;
-        
-      }   
+    var numbers = noBizInput5.toString();
+    var numsArray = numbers.split(',').map(Number);
+    var arrayLength = numsArray.length;
+    var newcode = [];
+    var arrayIndex= 0;
+    
+    for (var i = 0; i < arrayLength; i++) {
+      for (var hours = 0; hours < 24; hours++) {
+        if  (numsArray[i] == hours) {
+          newcode[arrayIndex] = ("#d_"+nameToIdResult + ".day.dcol"+ hours +" ");
+          arrayIndex++;
+          
+        }   
+      }
     }
-  }
-  var newCodeInString = newcode.toString();   /* Convert array to string */
-  var resultNoBiz5 = newCodeInString+"{background: rgba(190,75,219,.2);}";
+    var newCodeInString = newcode.toString();   /* Convert array to string */
+    var resultNoBiz5 = newCodeInString+"{background: rgba(190,75,219,.1);}";
   }
   
   //Saturday
   if (noBizInput6.length == 0) {var resultNoBiz6 = " ";}
   else{
-  var numbers = noBizInput6.toString();
-  var numsArray = numbers.split(',').map(Number);
-  var arrayLength = numsArray.length;
-  var newcode = [];
-  var arrayIndex= 0;
-  
-  for (var i = 0; i < arrayLength; i++) {
-    for (var hours = 0; hours < 24; hours++) {
-      if  (numsArray[i] == hours) {
-        newcode[arrayIndex] = ("#d_"+nameToIdResult + ".day.dcol"+ hours +" ");
-        arrayIndex++;
-        
-      }   
+    var numbers = noBizInput6.toString();
+    var numsArray = numbers.split(',').map(Number);
+    var arrayLength = numsArray.length;
+    var newcode = [];
+    var arrayIndex= 0;
+    
+    for (var i = 0; i < arrayLength; i++) {
+      for (var hours = 0; hours < 24; hours++) {
+        if  (numsArray[i] == hours) {
+          newcode[arrayIndex] = ("#d_"+nameToIdResult + ".day.dcol"+ hours +" ");
+          arrayIndex++;
+          
+        }   
+      }
     }
-  }
-  var newCodeInString = newcode.toString();   /* Convert array to string */
-  var resultNoBiz6 = newCodeInString+"{background: rgba(190,75,219,.2);}";
+    var newCodeInString = newcode.toString();   /* Convert array to string */
+    var resultNoBiz6 = newCodeInString+"{background: rgba(190,75,219,.1);}";
   }
   
   //Sunday
@@ -502,9 +503,9 @@ function myFunction(nameToIdInput, maxHoursInput, prefWorkInput,chatHoursInput, 
       }
     }
     var newCodeInString = newcode.toString();   /* Convert array to string */
-    var resultNoBiz7 = newCodeInString+"{background: rgba(190,75,219,.2);}";
+    var resultNoBiz7 = newCodeInString+"{background: rgba(190,75,219,.1);}";
   }
-
+  
   
   // Formatting result to get the CSS output
   var finalResult =   + resultOnlyTickets1+ resultOnlyTickets2+ resultOnlyTickets3+ resultOnlyTickets4+ resultOnlyTickets5+ resultOnlyTickets6+ resultOnlyTickets7+ resultNoBiz1+ resultNoBiz2+ resultNoBiz3+ resultNoBiz4+ resultNoBiz5+ resultNoBiz6+ resultNoBiz7;
@@ -516,12 +517,12 @@ function myFunction(nameToIdInput, maxHoursInput, prefWorkInput,chatHoursInput, 
   finalResult += "CSSFriday +="+ "`" +"/*" + nameToIdInput + "*/" + resultOnlyTickets5 + resultNoBiz5 + "`" +";";
   finalResult += "CSSSaturday +="+ "`" +"/*" + nameToIdInput + "*/" + resultOnlyTickets6 + resultNoBiz6 + "`" +";";
   finalResult += "CSSSunday+="+ "`" +"/*" + nameToIdInput + "*/" + resultOnlyTickets7 + resultNoBiz7 + "`"+";" ;
-      
-    // If the result is only errors, return one error message
-      if (finalResult !=="No ID FoundErrorInMaxHoursErrorin PrefWorkerror in chat hours ResultError in One Hour Block ResultErrorInfourHoursBlockResultErrorInBusinessResultError in team Lead Result") {
-        return finalResult; }
+  
+  // If the result is only errors, return one error message
+  if (finalResult !=="No ID FoundErrorInMaxHoursErrorin PrefWorkerror in chat hours ResultError in One Hour Block ResultErrorInfourHoursBlockResultErrorInBusinessResultError in team Lead Result") {
+    return finalResult; }
   else {
-   return nameToIdInput + "Error"}
+    return nameToIdInput + "Error"}
   
 }
 
@@ -537,7 +538,7 @@ function loop(){
   // This part gets the information from the current document and cells
   var app = SpreadsheetApp; 
   var activeSheet = app.getActiveSpreadsheet().getActiveSheet();
-   //Check how many filled rows are in the document
+  //Check how many filled rows are in the document
   var numRows = activeSheet.getLastRow();
   var activeRange = "B3:Y" + numRows;
   var total = [];
@@ -569,10 +570,11 @@ function loop(){
     var Wi = range.getCell(i,22).getValues().toString();
     var Xi = range.getCell(i,23).getValues().toString();
     var Yi = range.getCell(i,24).getValues().toString();
-      
-//Run the big function with the values of the row, and return the result
+    
+    //Run the big function with the values of the row, and return the result
     total[i]= myFunction(Bi, Ci, Di,Ei, Fi, Gi, Hi, Ii, Ji, Li, Mi, Ni, Oi, Pi, Qi, Ri, Si, Ti, Ui, Vi, Wi, Xi, Yi)
   }
   return total;
 } 
 
+//end of code
