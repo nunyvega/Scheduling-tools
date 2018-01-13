@@ -1,0 +1,75 @@
+// ==UserScript==
+// @name         Transparent Row Humanity
+// @namespace    http://tampermonkey.net/
+// @version      0.1
+// @description  try to take over the world!
+// @author       You
+// @match        https://automattic.humanity.com/*
+// @grant        none
+// ==/UserScript==
+
+(function() {
+    'use strict';
+
+    //------------------------------------------------------------------------------------------------------------------
+    // ADD TRANSPARENCY TO A ROW WHEN A PROFILE PICTURE IS CLICKED
+
+    var profilePics;
+    var transparentRow = function(){
+        //get array of images
+        profilePics = document.getElementsByClassName("usr");
+        var grandpaElement;
+        // on click over the profile pic, select the grandgrandparent element and add opacity and a background to it.
+        $(profilePics).click(function(){
+
+            //if the image was already clicked, revert changes
+            if(this.checker==="used"){
+                grandpaElement =   $(this).parent().parent().parent();
+                grandpaElement.css("opacity","1");
+                grandpaElement.css( "background","none");
+                this.checker = "not used";
+                return true;
+            }
+            // if the image was not used, add background colour and opacity
+            else{
+                grandpaElement =   $(this).parent().parent().parent();
+                grandpaElement.css("opacity","0.3");
+                grandpaElement.css( "background","rgba(100, 100, 100, 0.2)");
+                this.checker= "used";
+                return true;
+            }
+        });
+    };
+
+
+    // Run the script when the page is loaded
+    $(window).on("load", transparentRow());
+
+
+
+   // Check for changes to load the script again
+    var activeView2, day2, checkedStatus2, activeUrl2;
+
+    window.setInterval(function(){
+        var active = document.getElementsByClassName('tti selected');
+        var activeView = active[0].getAttribute("data-mode");
+        var day = document.getElementById("_ddr").textContent;
+        var activeUrl = window.location.href;
+        //check if any of the checkboxes from the left sidebar was marked
+        var cb=document.getElementsByClassName("cbl");
+        var checkedStatus = cb[0].checked +" "+ cb[1].checked +" "+ cb[2].checked +" "+ cb[3].checked;
+
+
+        if( activeView !== activeView2 || day !== day2 || checkedStatus!== checkedStatus2 || activeUrl !== activeUrl2) {
+            transparentRow();
+
+        }
+        checkedStatus2 = checkedStatus;
+        activeView2 = activeView;
+        day2 = day ;
+        activeUrl2 = activeUrl;
+    }, 3500); //check every 3500ms
+
+
+})();
+// End of code.
