@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name         Transparent Row Humanity
-// @namespace    http://tampermonkey.net/
-// @version      0.1
-// @description  try to take over the world!
-// @author       You
+// @namespace    https://github.com/nunyvega/Scheduling-tools/
+// @version      1
+// @description  ADD TRANSPARENCY TO A ROW WHEN A PROFILE PICTURE IS CLICKED
+// @author       Alvaro Vega
 // @match        https://automattic.humanity.com/*
 // @grant        none
 // ==/UserScript==
