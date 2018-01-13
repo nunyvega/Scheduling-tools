@@ -1,26 +1,9 @@
 
-/* This code takes the working preferences of different HEs and converts it into a CSS code, 
-that will modify the design of the scheduling tool interface.
------
-The code is divided in two main parts:
-1- A big function that converts all the different inputs of preferences into a CSS code.
-2- A loop that checks how many replies are in the spreadsheet, and runs the big function once per HE.
------
-After receiving the output code for all the HEs, this is added to TamperMonkey's script:
-https://github.com/nunyvega/JS-Tampermonkey-Human
-to add the CSS code to the scheduling page.
-*/
 
-
-
-// Part one:
-// One Hugh function with all of them inside:
-
-
-// variables for preferences in text
-
-
+// The big function that is called in the Sheet's cell
 function myFunction(nameToIdInput, maxHoursInput, prefWorkInput,chatHoursInput, oneHourBlockInput, fourHoursBlockInput, businessInput, teamLeadInput, maxBizInput, onlyTicketsInput1, onlyTicketsInput2, onlyTicketsInput3, onlyTicketsInput4, onlyTicketsInput5, onlyTicketsInput6, onlyTicketsInput7, noBizInput1, noBizInput2, noBizInput3, noBizInput4, noBizInput5, noBizInput6, noBizInput7, requirementInTextInput) {
+  
+  
   
   //  Change name to userID. Names and IDs are not included for security reasons.
   
@@ -31,6 +14,7 @@ function myFunction(nameToIdInput, maxHoursInput, prefWorkInput,chatHoursInput, 
     case "Zoh (R2)": nameToIdResult = 3730788 ; break;
     default: nameToIdResult = "No ID Found"; break;
   }
+  
   
   
   
@@ -698,3 +682,4 @@ function loop(){
 } 
 
 
+// END OF CODE
