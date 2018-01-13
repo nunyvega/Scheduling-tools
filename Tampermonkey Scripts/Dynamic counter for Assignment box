@@ -1,0 +1,72 @@
+// ==UserScript==
+// @name         Dynamic counter for Assignment box
+// @namespace    http://tampermonkey.net/
+// @version      2
+// @description  Display a dynamic counter that shows the number of assigned HEs while they are assigned.
+// @author       Alvaro Vega
+// @match        https://automattic.humanity.com/*
+// @grant        none
+// ==/UserScript==
+
+
+
+(function() {
+    'use strict';
+
+
+    //------------------------------------------------------------------------------------------------------------------
+    // ADD A BOX WITH THE NUMBER OF FILLED SLOTS THAT UPDATES IN EACH CLICK TO THE ASSIGNMENT BOX
+
+
+    // Function to count the number of checked boxes (called later on)
+
+    function countChecked() {
+        var scheduledPeople=0;
+        var assignmentBoxes = document.getElementsByClassName("j-employee-checkbox");
+        for (var i=0; i< assignmentBoxes.length; i++){
+            if (assignmentBoxes[i].checked===true){
+                scheduledPeople++;}}
+        return scheduledPeople;
+    }
+
+
+    //  Function to add an HTML element that appends the count to the assignment box (called later on)
+    function addHtml(){
+        // If there's a previous box, remove it
+        var previousBox = document.getElementById("inputBox");
+        if (previousBox !== null ) {var previousBox2 = document.getElementById("inputBox");
+                                    previousBox.remove();
+                                   }
+        //Create DIV and append it to the assignment obx
+        var para = document.createElement("p");
+        var node = document.createTextNode("  ["+countChecked()+" Filled]");
+        para.appendChild(node);
+        para.classList.add('inputBox');
+        para.id = "inputBox";
+        para.style.display="inline";
+        var element = document.querySelector("#shiftpop > table > tbody > tr.hum_tbody.hum_tfoot > td > div.fright");
+        element.appendChild(para);}
+
+
+
+              // When one of the checkboxes in the assignment box is clicked, run the counter.
+    var getBoxes = function(){
+        $('body').on( 'click', '.j-employee-checkbox', function() {
+            addHtml();
+        });
+    };
+
+
+
+
+
+    // Run scripts again to update the changes
+    window.setInterval(function(){
+        getBoxes();
+    }, 3000); //check every 3000ms
+
+
+
+    //-----------------------------------------------------------------------------------------------------------------
+})();
+// End of code.
