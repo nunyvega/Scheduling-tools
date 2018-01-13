@@ -1,0 +1,11 @@
+#Code written to be added to a Google Sheets file
+
+Steps to use it:
+1- Create a new Google Sheets file 
+2- Paste the code in Tools > Script editor
+3- Once the report is exported from Humanity, paste in the Google Sheets file the next 3 columns:
+    Start Date	- Start Time -	Slots
+4- Select the pasted content and click in Format > Number > Plain text
+5- In any empty cell write =loop()
+
+This will run the script, and return the data needed for the Weekly information report.
