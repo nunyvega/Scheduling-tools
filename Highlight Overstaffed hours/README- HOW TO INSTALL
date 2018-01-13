@@ -1,0 +1,7 @@
+The script is intended to run directly from a bookmark
+
+1- Right click in the bookmark bar of your browser
+2- Select "Add page"
+3- Next to Name, assign the name "Highlight Overstaffed hours"
+4- Next to URL, write "javascript: " and paste the code in 
+https://github.com/nunyvega/Scheduling-tools/blob/master/Highlight%20Overstaffed%20hours/Highlight%20Overstaffed%20hours.js
