@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Humanity Ladder
-// @namespace    http://tampermonkey.net/
+// @namespace    https://github.com/nunyvega/Scheduling-tools/
 // @version      1
 // @description  Highlight the hour column when the hour is clicked
 // @author       Alvaro Vega
