@@ -1,0 +1,15 @@
+
+Code written to be used in Google sheets. It converts preferences sent via Google form to CSS code.
+This code is used to modify the design of the scheduling tool interface.
+
+-----
+The code is divided in two main parts:
+1- A big function that converts all the different inputs of preferences into a CSS code.
+2- A loop that checks how many replies are in the spreadsheet, and runs the big function once per HE.
+
+-----
+After receiving the output code for all the HEs, this is added to TamperMonkey's script:
+https://github.com/nunyvega/Scheduling-tools/blob/master/Tampermonkey%20Scripts/Append%20preferences%20CSS
+to add the CSS code to the scheduling page.
+
+
