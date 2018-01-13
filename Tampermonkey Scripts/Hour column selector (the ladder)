@@ -1,0 +1,349 @@
+// ==UserScript==
+// @name         Humanity Ladder
+// @namespace    http://tampermonkey.net/
+// @version      1
+// @description  Highlight the hour column when the hour is clicked
+// @author       Alvaro Vega
+// @match        https://automattic.humanity.com/*
+// @grant        none
+// ==/UserScript==
+
+(function() {
+    'use strict';
+
+    // Your code here...
+
+
+//------------------------------------------------------------------------------------------------------------------
+// HIGHLIGHT SPECIFIC COLUMNS WHEN THE NUMBER IN THE TOP OF THE COLUMN IS CLICKED
+
+// Select the top numbers
+var num0 = document.querySelector("#tday tbody tr  td:nth-child(2)");
+var num1 = document.querySelector("#tday tbody tr  td:nth-child(3)");
+var num2 = document.querySelector("#tday tbody tr  td:nth-child(4)");
+var num3 = document.querySelector("#tday tbody tr  td:nth-child(5)");
+var num4 = document.querySelector("#tday tbody tr  td:nth-child(6)");
+var num5 = document.querySelector("#tday tbody tr  td:nth-child(7)");
+var num6 = document.querySelector("#tday tbody tr  td:nth-child(8)");
+var num7 = document.querySelector("#tday tbody tr  td:nth-child(9)");
+var num8 = document.querySelector("#tday tbody tr  td:nth-child(10)");
+var num9 = document.querySelector("#tday tbody tr  td:nth-child(11)");
+var num10 = document.querySelector("#tday tbody tr  td:nth-child(12)");
+var num11 = document.querySelector("#tday tbody tr  td:nth-child(13)");
+var num12 = document.querySelector("#tday tbody tr  td:nth-child(14)");
+var num13 = document.querySelector("#tday tbody tr  td:nth-child(15)");
+var num14 = document.querySelector("#tday tbody tr  td:nth-child(16)");
+var num15 = document.querySelector("#tday tbody tr  td:nth-child(17)");
+var num16 = document.querySelector("#tday tbody tr  td:nth-child(18)");
+var num17 = document.querySelector("#tday tbody tr  td:nth-child(19)");
+var num18 = document.querySelector("#tday tbody tr  td:nth-child(20)");
+var num19 = document.querySelector("#tday tbody tr  td:nth-child(21)");
+var num20 = document.querySelector("#tday tbody tr  td:nth-child(22)");
+var num21 = document.querySelector("#tday tbody tr  td:nth-child(23)");
+var num22 = document.querySelector("#tday tbody tr  td:nth-child(24)");
+var num23 = document.querySelector("#tday tbody tr  td:nth-child(25)");
+
+//Select the columns
+var bar0 = document.getElementsByClassName("dcol0");
+var bar1 = document.getElementsByClassName("dcol1");
+var bar2 = document.getElementsByClassName("dcol2");
+var bar3 = document.getElementsByClassName("dcol3");
+var bar4 = document.getElementsByClassName("dcol4");
+var bar5 = document.getElementsByClassName("dcol5");
+var bar6 = document.getElementsByClassName("dcol6");
+var bar7 = document.getElementsByClassName("dcol7");
+var bar8 = document.getElementsByClassName("dcol8");
+var bar9 = document.getElementsByClassName("dcol9");
+var bar10 = document.getElementsByClassName("dcol10");
+var bar11 = document.getElementsByClassName("dcol11");
+var bar12 = document.getElementsByClassName("dcol12");
+var bar13 = document.getElementsByClassName("dcol13");
+var bar14 = document.getElementsByClassName("dcol14");
+var bar15 = document.getElementsByClassName("dcol15");
+var bar16 = document.getElementsByClassName("dcol16");
+var bar17 = document.getElementsByClassName("dcol17");
+var bar18 = document.getElementsByClassName("dcol18");
+var bar19 = document.getElementsByClassName("dcol19");
+var bar20 = document.getElementsByClassName("dcol20");
+var bar21 = document.getElementsByClassName("dcol21");
+var bar22 = document.getElementsByClassName("dcol22");
+var bar23 = document.getElementsByClassName("dcol23");
+
+//Create variables to enable/disable the color change
+var colorBar0, colorBar1, colorBar2, colorBar3, colorBar4, colorBar5, colorBar6, colorBar7, colorBar8, colorBar9, colorBar10, colorBar11, colorBar12;
+var colorBar13, colorBar14, colorBar15, colorBar16, colorBar17, colorBar18, colorBar19, colorBar20, colorBar21, colorBar22, colorBar23;
+
+
+//Functions to change the color of the column when clicked
+
+$(num0).click(function(){
+    if (colorBar0!="changed") {
+        $(bar0).css("border", "lightgray solid 5px");
+        colorBar0="changed";
+    }
+    else{
+        $(bar0).css("border", "lightgray solid .1px");
+        colorBar0="unchanged";
+    }
+});
+
+
+$(num1).click(function(){
+    if (colorBar1!="changed") {
+        $(bar1).css("border", "lightgray solid 5px");
+        colorBar1="changed";
+    }
+    else{
+        $(bar1).css("border", "lightgray solid .1px");
+        colorBar1="unchanged";
+    }
+});
+
+$(num2).click(function(){
+    if (colorBar2!="changed") {
+        $(bar2).css("border", "lightgray solid 5px");
+        colorBar2="changed";
+    }
+    else{
+        $(bar2).css("border", "lightgray solid .1px");
+        colorBar2="unchanged";
+    }
+});
+
+
+$(num3).click(function(){
+    if (colorBar3!="changed") {
+        $(bar3).css("border", "lightgray solid 5px");
+        colorBar3="changed";
+    }
+    else{
+        $(bar3).css("border", "lightgray solid .1px");
+        colorBar3="unchanged";
+    }
+});
+
+$(num4).click(function(){
+    if (colorBar4!="changed") {
+        $(bar4).css("border", "lightgray solid 5px");
+        colorBar4="changed";
+    }
+    else{
+        $(bar4).css("border", "lightgray solid .1px");
+        colorBar4="unchanged";
+    }
+});
+
+$(num5).click(function(){
+    if (colorBar5!="changed") {
+        $(bar5).css("border", "lightgray solid 5px");
+        colorBar5="changed";
+    }
+    else{
+        $(bar5).css("border", "lightgray solid .1px");
+        colorBar5="unchanged";
+    }
+});
+
+$(num6).click(function(){
+    if (colorBar6!="changed") {
+        $(bar6).css("border", "lightgray solid 5px");
+        colorBar6="changed";
+    }
+    else{
+        $(bar6).css("border", "lightgray solid .1px");
+        colorBar6="unchanged";
+    }
+});
+$(num7).click(function(){
+    if (colorBar7!="changed") {
+        $(bar7).css("border", "lightgray solid 5px");
+        colorBar7="changed";
+    }
+    else{
+        $(bar7).css("border", "lightgray solid .1px");
+        colorBar7="unchanged";
+    }
+});
+$(num8).click(function(){
+    if (colorBar8!="changed") {
+        $(bar8).css("border", "lightgray solid 5px");
+        colorBar8="changed";
+    }
+    else{
+        $(bar8).css("border", "lightgray solid .1px");
+        colorBar8="unchanged";
+    }
+});
+
+$(num9).click(function(){
+    if (colorBar9!="changed") {
+        $(bar9).css("border", "lightgray solid 5px");
+        colorBar9="changed";
+    }
+    else{
+        $(bar9).css("border", "lightgray solid .1px");
+        colorBar9="unchanged";
+    }
+});
+
+$(num10).click(function(){
+    if (colorBar10!="changed") {
+        $(bar10).css("border", "lightgray solid 5px");
+        colorBar10="changed";
+    }
+    else{
+        $(bar10).css("border", "lightgray solid .1px");
+        colorBar10="unchanged";
+    }
+});
+
+$(num11).click(function(){
+    if (colorBar11!="changed") {
+        $(bar11).css("border", "lightgray solid 5px");
+        colorBar11="changed";
+    }
+    else{
+        $(bar11).css("border", "lightgray solid .1px");
+        colorBar11="unchanged";
+    }
+});
+
+$(num12).click(function(){
+    if (colorBar12!="changed") {
+        $(bar12).css("border", "lightgray solid 5px");
+        colorBar12="changed";
+    }
+    else{
+        $(bar12).css("border", "lightgray solid .1px");
+        colorBar12="unchanged";
+    }
+});
+
+$(num13).click(function(){
+    if (colorBar13!="changed") {
+        $(bar13).css("border", "lightgray solid 5px");
+        colorBar13="changed";
+    }
+    else{
+        $(bar13).css("border", "lightgray solid .1px");
+        colorBar13="unchanged";
+    }
+});
+
+$(num14).click(function(){
+    if (colorBar14!="changed") {
+        $(bar14).css("border", "lightgray solid 5px");
+        colorBar14="changed";
+    }
+    else{
+        $(bar14).css("border", "lightgray solid .1px");
+        colorBar14="unchanged";
+    }
+});
+
+$(num15).click(function(){
+    if (colorBar15!="changed") {
+        $(bar15).css("border", "lightgray solid 5px");
+        colorBar15="changed";
+    }
+    else{
+        $(bar15).css("border", "lightgray solid .1px");
+        colorBar15="unchanged";
+    }
+});
+
+$(num16).click(function(){
+    if (colorBar16!="changed") {
+        $(bar16).css("border", "lightgray solid 5px");
+        colorBar16="changed";
+    }
+    else{
+        $(bar16).css("border", "lightgray solid .1px");
+        colorBar16="unchanged";
+    }
+});
+
+$(num17).click(function(){
+    if (colorBar17!="changed") {
+        $(bar17).css("border", "lightgray solid 5px");
+        colorBar17="changed";
+    }
+    else{
+        $(bar17).css("border", "lightgray solid .1px");
+        colorBar17="unchanged";
+    }
+});
+
+$(num18).click(function(){
+    if (colorBar18!="changed") {
+        $(bar18).css("border", "lightgray solid 5px");
+        colorBar18="changed";
+    }
+    else{
+        $(bar18).css("border", "lightgray solid .1px");
+        colorBar18="unchanged";
+    }
+});
+
+$(num19).click(function(){
+    if (colorBar19!="changed") {
+        $(bar19).css("border", "lightgray solid 5px");
+        colorBar19="changed";
+    }
+    else{
+        $(bar19).css("border", "lightgray solid .1px");
+        colorBar19="unchanged";
+    }
+});
+
+
+
+
+$(num20).click(function(){
+    if (colorBar20!="changed") {
+        $(bar20).css("border", "lightgray solid 5px");
+        colorBar20="changed";
+    }
+    else{
+        $(bar20).css("border", "lightgray solid .1px");
+        colorBar20="unchanged";
+    }
+});
+
+$(num21).click(function(){
+    if (colorBar21!="changed") {
+        $(bar21).css("border", "lightgray solid 5px");
+        colorBar21="changed";
+    }
+    else{
+        $(bar21).css("border", "lightgray solid .1px");
+        colorBar21="unchanged";
+    }
+});
+
+$(num22).click(function(){
+    if (colorBar22!="changed") {
+        $(bar22).css("border", "lightgray solid 5px");
+        colorBar22="changed";
+    }
+    else{
+        $(bar22).css("border", "lightgray solid .1px");
+        colorBar22="unchanged";
+    }
+});
+
+$(num23).click(function(){
+    if (colorBar23!="changed") {
+        $(bar23).css("border", "lightgray solid 5px");
+        colorBar23="changed";
+    }
+    else{
+        $(bar23).css("border", "lightgray solid .1px");
+        colorBar23="unchanged";
+    }
+});
+
+})();
+
+
+// End of the code
