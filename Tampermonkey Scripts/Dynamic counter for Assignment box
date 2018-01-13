@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Dynamic counter for Assignment box
-// @namespace    http://tampermonkey.net/
+// @namespace    https://github.com/nunyvega/Scheduling-tools/
 // @version      2
 // @description  Display a dynamic counter that shows the number of assigned HEs while they are assigned.
 // @author       Alvaro Vega
