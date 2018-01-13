@@ -1,4 +1,4 @@
-/* code to create a bookmark that highlights overstaffed hours in the Open Shifts view in Humanity */
+/* Read  readme file with steps if you need help to add the bookmark*/
 
 
 var partes= [];
