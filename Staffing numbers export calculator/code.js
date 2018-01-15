@@ -1,5 +1,3 @@
-
-
 var arrayCounter = 0;
 var arrayCounter2 = 0;
 var partsArray = [];
@@ -53,7 +51,7 @@ function loop(){
   var activeSheet = app.getActiveSpreadsheet().getActiveSheet();
   //Check how many filled rows are in the document
   var numRows = activeSheet.getLastRow();
-  var activeRange = "B2:D" + numRows;
+  var activeRange = "A2:C" + numRows;
   var total = [];
   var loops = numRows ;
   var range = activeSheet.getRange(activeRange)
@@ -61,25 +59,25 @@ function loop(){
   for (i=1; i < loops ; i++) { 
     var j = i-1;
     var k = i+1;
-    var Bi = range.getCell(i,1).getValues().toString();
-    var Ci = range.getCell(i,2).getValues().toString();
-    var Di = range.getCell(i,3).getValues().toString();
+    var Ai = range.getCell(i,1).getValues().toString();
+    var Bi = range.getCell(i,2).getValues().toString();
+    var Ci = range.getCell(i,3).getValues().toString();
     // if it's the first line don't run it (there's no previous value)
-    if (i!= 1){ var Bj = range.getCell(j,1).getValues().toString();
-               var Cj = range.getCell(j,2).getValues().toString();
-               var Dj = range.getCell(j,3).getValues().toString();}
-    else { Bj = 0; Cj=0; Dj=0;}
+    if (i!= 1){ var Aj = range.getCell(j,1).getValues().toString();
+               var Bj = range.getCell(j,2).getValues().toString();
+               var Cj = range.getCell(j,3).getValues().toString();}
+    else { Aj = 0; Bj=0; Cj=0;}
     //if  it's the last line don't run it (there's no next value)
     if (k!= loops){
-      var Bk = range.getCell(k,1).getValues().toString();
-      var Ck = range.getCell(k,2).getValues().toString();
+      var Ak = range.getCell(k,1).getValues().toString();
+      var Bk = range.getCell(k,2).getValues().toString();
     }
-    else {Bk=0; Ck=0;}
+    else {Ak=0; Ck=0;}
     
     
     
     //Run the big function with the values of the row, and return the result
-    total[i]= myFunction(Bi,Bj,Bk,Ci,Cj,Ck,Di,Dj)
+    total[i]= myFunction(Ai,Aj,Ak,Bi,Bj,Bk,Ci,Cj)
   }
   
   for (i=0; i< totalResult.length; i++) {
@@ -100,13 +98,3 @@ function loop(){
   return totalResult;
   
 } 
-
-
-
-
-//  javascript: var partes= [];
-//  for (var i = 1; i < 10000; i++) 
-//  {var numerato = document.querySelector("#_cd_reports > div.right > div.tableScroll > table > tbody > tr:nth-child("+i+") > td:nth-child(6)");
-//   var numerato2= numerato.innerHTML;
-//   var frase = numerato2.toString();
-//   partes[i] = frase.split('/').map(Number);if (partes[i][0] > partes [i][1]) {numerato.style.color = 'red';numerato.style.font= "15pt Courier";numerato.style.background= "yellow";}}
