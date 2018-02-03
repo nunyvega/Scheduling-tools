@@ -1,9 +1,26 @@
+// This version does not include the name of the HEs, ask Alvaro for the original file.
+/* This code takes the working preferences of different HEs and converts it into a CSS code, 
+that will modify the design of the scheduling tool interface.
+-----
+The code is divided in two main parts:
+1- A big function that converts all the different inputs of preferences into a CSS code.
+2- A loop that checks how many replies are in the spreadsheet, and runs the big function once per HE.
+-----
+After receiving the output code for all the HEs, this is added to TamperMonkey's script:
+https://github.com/nunyvega/JS-Tampermonkey-Human
+to add the CSS code to the scheduling page.
+*/
 
 
-// The big function that is called in the Sheet's cell
-function myFunction(nameToIdInput, maxHoursInput, prefWorkInput,chatHoursInput, oneHourBlockInput, fourHoursBlockInput, businessInput, teamLeadInput, maxBizInput, onlyTicketsInput1, onlyTicketsInput2, onlyTicketsInput3, onlyTicketsInput4, onlyTicketsInput5, onlyTicketsInput6, onlyTicketsInput7, noBizInput1, noBizInput2, noBizInput3, noBizInput4, noBizInput5, noBizInput6, noBizInput7, requirementInTextInput) {
-  
-  
+
+// Part one:
+// One Hugh function with all of them inside:
+
+
+// variables for preferences in text
+
+
+function myFunction(nameToIdInput, maxHoursInput, prefWorkInput,prefWorkInput2,chatHoursInput, oneHourBlockInput, fourHoursBlockInput, businessInput, teamLeadInput, maxBizInput, onlyTicketsInput1, onlyTicketsInput2, onlyTicketsInput3, onlyTicketsInput4, onlyTicketsInput5, onlyTicketsInput6, onlyTicketsInput7, noBizInput1, noBizInput2, noBizInput3, noBizInput4, noBizInput5, noBizInput6, noBizInput7, requirementInTextInput) {
   
   //  Change name to userID. Names and IDs are not included for security reasons.
   
@@ -11,10 +28,9 @@ function myFunction(nameToIdInput, maxHoursInput, prefWorkInput,chatHoursInput, 
   var nameToIdResult;
   switch(nameToId){
     case "Alvaro Vega (DR)": nameToIdResult = 3547616 ; break;
-    case "Zoh (R2)": nameToIdResult = 3730788 ; break;
+    case "Zoha (R2)": nameToIdResult = 3730788 ; break;
     default: nameToIdResult = "No ID Found"; break;
   }
-  
   
   
   
@@ -47,7 +63,7 @@ function myFunction(nameToIdInput, maxHoursInput, prefWorkInput,chatHoursInput, 
     maxResult="8hMax ";
   }
   else {
-    maxResult= "ErrorInMaxHours";
+    maxResult= " ";
   }
   
   
@@ -69,7 +85,27 @@ function myFunction(nameToIdInput, maxHoursInput, prefWorkInput,chatHoursInput, 
     prefResult="background-color: #1068a72e !important;";
   }
   else {
-    prefResult="Errorin PrefWork";
+    prefResult=" ";
+  }
+  
+  /* Second type of work */
+  
+  
+  var prefResult2;
+  if(prefWorkInput2=="Tickets"){
+    prefResult2="background-color: rgba(253, 126, 20, 0.13) !important;";
+  }
+  else if(prefWorkInput2=="Live Chat"){
+    prefResult2="background-color:rgba(190, 92, 251,0.1) !important;";
+  }
+  else if(prefWorkInput2=="No particular preference"){
+    prefResult2=""
+  }
+  else if(prefWorkInput2=="Business 1:1"){
+    prefResult2="background-color: #1068a72e !important;";
+  }
+  else {
+    prefResult2=" ";
   }
   
   
@@ -95,7 +131,7 @@ function myFunction(nameToIdInput, maxHoursInput, prefWorkInput,chatHoursInput, 
     chatHoursResult="";
   }
   else {
-    chatHoursResult= "error in chat hours Result";
+    chatHoursResult= " ";
   }
   
   
@@ -112,7 +148,7 @@ function myFunction(nameToIdInput, maxHoursInput, prefWorkInput,chatHoursInput, 
     oneHourBlockResult="1hX ";
   }
   else {
-    oneHourBlockResult="Error in One Hour Block Result";
+    oneHourBlockResult=" ";
   }
   
   
@@ -128,7 +164,7 @@ function myFunction(nameToIdInput, maxHoursInput, prefWorkInput,chatHoursInput, 
     fourHoursBlockResult="4hX ";
   }
   else {
-    fourHoursBlockResult= "ErrorInfourHoursBlockResult";
+    fourHoursBlockResult= " ";
   }
   
   
@@ -147,7 +183,7 @@ function myFunction(nameToIdInput, maxHoursInput, prefWorkInput,chatHoursInput, 
     businessResult="";
   }
   else {
-    businessResult="ErrorInBusinessResult";
+    businessResult=" ";
   }
   
   
@@ -163,18 +199,19 @@ function myFunction(nameToIdInput, maxHoursInput, prefWorkInput,chatHoursInput, 
     var teamLeadResult ="";
   }
   else {
-    var teamLeadResult= "Error in team Lead Result"
+    var teamLeadResult= " "
     }
   
   
   
   /* Pressable Ambassador */
   
-  
-  var maxBizResult = "MaxBiz " + maxBizInput;
-
-  
-  
+  if (maxBizInput){
+    var maxBizResult = "MaxBiz " + maxBizInput;
+  }
+  else{
+    var maxBizResult=" ";
+  }
   
   
   
@@ -605,14 +642,16 @@ function myFunction(nameToIdInput, maxHoursInput, prefWorkInput,chatHoursInput, 
   }
   
   // Converting preferences in text to an array
-
   
-   
-    
+  
+  
+  
   
   // Formatting result to get the CSS output
-  var finalResult =   + resultOnlyTickets1+ resultOnlyTickets2+ resultOnlyTickets3+ resultOnlyTickets4+ resultOnlyTickets5+ resultOnlyTickets6+ resultOnlyTickets7+ resultNoBiz1+ resultNoBiz2+ resultNoBiz3+ resultNoBiz4+ resultNoBiz5+ resultNoBiz6+ resultNoBiz7;
-  var finalResult= "CSSWeek +="+ "`" + "/*" + nameToIdInput + "*/" + "#e_"+nameToIdResult+ "::after"+ "{ display:inline-block;content:'"+ maxResult + chatHoursResult + oneHourBlockResult + fourHoursBlockResult + maxBizResult +"';" +"}"+ "#e_"+nameToIdResult+ "{"+ prefResult + businessResult + teamLeadResult + ";" +"}"+ "`"+";";
+  var finalResult= "CSSWeek +="+ "`" + "/*" + nameToIdInput + "*/" + "#e_"+nameToIdResult+ "::after"+ "{ display:inline-block;content:'"+ 
+    maxResult + chatHoursResult + oneHourBlockResult + fourHoursBlockResult + maxBizResult +"';" +"}"+ "#e_"+nameToIdResult+ "{"+ prefResult + 
+      businessResult + teamLeadResult + ";" +"}"+ "#e_"+nameToIdResult+ " .udrag" + "{"+ prefResult2  +"}"+ "`"+";";
+  
   finalResult += "CSSMonday +="+ "`" +"/*" + nameToIdInput + "*/" + resultOnlyTickets1 + resultNoBiz1 + "`" +";";
   finalResult += "CSSTuesday +="+ "`" +"/*" + nameToIdInput + "*/" + resultOnlyTickets2 + resultNoBiz2 + "`" +";";
   finalResult += "CSSWednesday +="+ "`" +"/*" + nameToIdInput + "*/" + resultOnlyTickets3 + resultNoBiz3 + "`"+";" ;
@@ -620,7 +659,12 @@ function myFunction(nameToIdInput, maxHoursInput, prefWorkInput,chatHoursInput, 
   finalResult += "CSSFriday +="+ "`" +"/*" + nameToIdInput + "*/" + resultOnlyTickets5 + resultNoBiz5 + "`" +";";
   finalResult += "CSSSaturday +="+ "`" +"/*" + nameToIdInput + "*/" + resultOnlyTickets6 + resultNoBiz6 + "`" +";";
   finalResult += "CSSSunday+="+ "`" +"/*" + nameToIdInput + "*/" + resultOnlyTickets7 + resultNoBiz7 + "`"+";" ;
-  finalResult += "textForDiv.push("+'"'+requirementInTextInput + "^" + nameToIdResult +'"'+");"
+  
+  //If there's a preference in text added, add it to the preferences array
+  if ( requirementInTextInput ) 
+  { finalResult += "textForDiv.push("+'"'+requirementInTextInput + "^" + nameToIdResult +'"'+");"}
+  
+  
   // If the result is only errors, return one error message
   if (finalResult !=="No ID FoundErrorInMaxHoursErrorin PrefWorkerror in chat hours ResultError in One Hour Block ResultErrorInfourHoursBlockResultErrorInBusinessResultError in team Lead Result") {
     return finalResult; }
@@ -643,7 +687,7 @@ function loop(){
   var activeSheet = app.getActiveSpreadsheet().getActiveSheet();
   //Check how many filled rows are in the document
   var numRows = activeSheet.getLastRow();
-  var activeRange = "B3:Z" + numRows;
+  var activeRange = "B3:AA" + numRows;
   var total = [];
   var loops = numRows - 1;
   var range = activeSheet.getRange(activeRange)
@@ -658,8 +702,8 @@ function loop(){
     var Hi = range.getCell(i,7).getValues().toString();
     var Ii = range.getCell(i,8).getValues().toString();
     var Ji = range.getCell(i,9).getValues().toString();
+    var Li = range.getCell(i,10).getValues().toString();
     ///we don't need K's value, as it is the email, only used to modify the selections.
-    var Li = range.getCell(i,11).getValues().toString();
     var Mi = range.getCell(i,12).getValues().toString();
     var Ni = range.getCell(i,13).getValues().toString();
     var Oi = range.getCell(i,14).getValues().toString();
@@ -674,12 +718,12 @@ function loop(){
     var Xi = range.getCell(i,23).getValues().toString();
     var Yi = range.getCell(i,24).getValues().toString();
     var Zi = range.getCell(i,25).getValues().toString();
+    var AAi = range.getCell(i,26).getValues().toString();
     
     //Run the big function with the values of the row, and return the result
-    total[i]= myFunction(Bi, Ci, Di,Ei, Fi, Gi, Hi, Ii, Ji, Li, Mi, Ni, Oi, Pi, Qi, Ri, Si, Ti, Ui, Vi, Wi, Xi, Yi, Zi)
+    total[i]= myFunction(Bi, Ci, Di,Ei, Fi, Gi, Hi, Ii, Ji, Li, Mi, Ni, Oi, Pi, Qi, Ri, Si, Ti, Ui, Vi, Wi, Xi, Yi, Zi,AAi)
   }
   return total;
 } 
 
 
-// END OF CODE
