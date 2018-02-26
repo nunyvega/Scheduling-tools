@@ -20,6 +20,28 @@ to add the CSS code to the scheduling page.
 // variables for preferences in text
 
 
+
+/* This code takes the working preferences of different HEs and converts it into a CSS code, 
+that will modify the design of the scheduling tool interface.
+-----
+The code is divided in two main parts:
+1- A big function that converts all the different inputs of preferences into a CSS code.
+2- A loop that checks how many replies are in the spreadsheet, and runs the big function once per HE.
+-----
+After receiving the output code for all the HEs, this is added to TamperMonkey's script:
+https://github.com/nunyvega/JS-Tampermonkey-Human
+to add the CSS code to the scheduling page.
+*/
+
+
+
+// Part one:
+// One Hugh function with all of them inside:
+
+
+// variables for preferences in text
+
+
 function myFunction(nameToIdInput, maxHoursInput, prefWorkInput,prefWorkInput2,chatHoursInput, oneHourBlockInput, fourHoursBlockInput, businessInput, teamLeadInput, maxBizInput, onlyTicketsInput1, onlyTicketsInput2, onlyTicketsInput3, onlyTicketsInput4, onlyTicketsInput5, onlyTicketsInput6, onlyTicketsInput7, noBizInput1, noBizInput2, noBizInput3, noBizInput4, noBizInput5, noBizInput6, noBizInput7, requirementInTextInput) {
   
   //  Change name to userID. Names and IDs are not included for security reasons.
@@ -28,7 +50,6 @@ function myFunction(nameToIdInput, maxHoursInput, prefWorkInput,prefWorkInput2,c
   var nameToIdResult;
   switch(nameToId){
     case "Alvaro Vega (DR)": nameToIdResult = 3547616 ; break;
-    case "Zoha (R2)": nameToIdResult = 3730788 ; break;
     default: nameToIdResult = "No ID Found"; break;
   }
   
@@ -93,10 +114,10 @@ function myFunction(nameToIdInput, maxHoursInput, prefWorkInput,prefWorkInput2,c
   
   var prefResult2;
   if(prefWorkInput2=="Tickets"){
-    prefResult2="background-color: rgba(253, 126, 20, 0.13) !important;";
+    prefResult2="background-color: #ffeee0 !important;";
   }
   else if(prefWorkInput2=="Live Chat"){
-    prefResult2="background-color:rgba(190, 92, 251,0.1) !important;";
+    prefResult2="background-color:#f9efff !important;";
   }
   else if(prefWorkInput2=="No particular preference"){
     prefResult2=""
@@ -438,7 +459,7 @@ function myFunction(nameToIdInput, maxHoursInput, prefWorkInput,prefWorkInput2,c
       newcode[hours] = ("#d_"+ nameToIdResult + ".day.dcol"+ hours +" ");
     }
     var newCodeInString = newcode.toString();   /* Convert array to string */
-    var resultNoBiz1 = newCodeInString +"{background: rgba(253, 126, 20, 0.2)!important;}";
+    var resultNoBiz1 = newCodeInString +"{background: rgba(190,75,219,.1);}";
   }           
   else{
     var numbers = noBizInput1.toString();
@@ -469,7 +490,7 @@ function myFunction(nameToIdInput, maxHoursInput, prefWorkInput,prefWorkInput2,c
       newcode[hours] = ("#d_"+ nameToIdResult + ".day.dcol"+ hours +" ");
     }
     var newCodeInString = newcode.toString();   /* Convert array to string */
-    var resultNoBiz2 = newCodeInString +"{background: rgba(253, 126, 20, 0.2)!important;}";
+    var resultNoBiz2 = newCodeInString +"{background: rgba(190,75,219,.1);}";
   }   
   else{
     var numbers = noBizInput2.toString();
@@ -499,7 +520,7 @@ function myFunction(nameToIdInput, maxHoursInput, prefWorkInput,prefWorkInput2,c
       newcode[hours] = ("#d_"+ nameToIdResult + ".day.dcol"+ hours +" ");
     }
     var newCodeInString = newcode.toString();   /* Convert array to string */
-    var resultNoBiz3 = newCodeInString +"{background: rgba(253, 126, 20, 0.2)!important;}";
+    var resultNoBiz3 = newCodeInString +"{background: rgba(190,75,219,.1);}";
   }   
   else{
     var numbers = noBizInput3.toString();
@@ -529,7 +550,7 @@ function myFunction(nameToIdInput, maxHoursInput, prefWorkInput,prefWorkInput2,c
       newcode[hours] = ("#d_"+ nameToIdResult + ".day.dcol"+ hours +" ");
     }
     var newCodeInString = newcode.toString();   /* Convert array to string */
-    var resultNoBiz4 = newCodeInString +"{background: rgba(253, 126, 20, 0.2)!important;}";
+    var resultNoBiz4 = newCodeInString +"{background: rgba(190,75,219,.1);}";
   }   
   else{
     var numbers = noBizInput4.toString();
@@ -559,7 +580,7 @@ function myFunction(nameToIdInput, maxHoursInput, prefWorkInput,prefWorkInput2,c
       newcode[hours] = ("#d_"+ nameToIdResult + ".day.dcol"+ hours +" ");
     }
     var newCodeInString = newcode.toString();   /* Convert array to string */
-    var resultNoBiz5 = newCodeInString +"{background: rgba(253, 126, 20, 0.2)!important;}";
+    var resultNoBiz5 = newCodeInString +"{background: rgba(190,75,219,.1);}";
   }   
   else{
     var numbers = noBizInput5.toString();
@@ -589,7 +610,7 @@ function myFunction(nameToIdInput, maxHoursInput, prefWorkInput,prefWorkInput2,c
       newcode[hours] = ("#d_"+ nameToIdResult + ".day.dcol"+ hours +" ");
     }
     var newCodeInString = newcode.toString();   /* Convert array to string */
-    var resultNoBiz6 = newCodeInString +"{background: rgba(253, 126, 20, 0.2)!important;}";
+    var resultNoBiz6 = newCodeInString +"{background: rgba(190,75,219,.1);}";
   }   
   else{
     var numbers = noBizInput6.toString();
@@ -619,7 +640,7 @@ function myFunction(nameToIdInput, maxHoursInput, prefWorkInput,prefWorkInput2,c
       newcode[hours] = ("#d_"+ nameToIdResult + ".day.dcol"+ hours +" ");
     }
     var newCodeInString = newcode.toString();   /* Convert array to string */
-    var resultNoBiz7 = newCodeInString +"{background: rgba(253, 126, 20, 0.2)!important;}";
+    var resultNoBiz7 = newCodeInString +"{background: rgba(190,75,219,.1);}";
   }   
   else{
     var numbers = noBizInput7.toString();
