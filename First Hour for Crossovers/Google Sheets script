@@ -1,6 +1,6 @@
 // Script to add in Google sheets, to grab the input and give back a CSS code, that would later be added to TamperMonkey
 
-
+// Function that takes the input from the sheet and returns the code.
 function myFunction(Id, timeZone) {
   
   //convert the ID to the ID used by Humanity
@@ -30,6 +30,7 @@ function myFunction(Id, timeZone) {
 }
 
 
+//Function to loop through all the columns in the sheet
 
 function loop(){
   // This part gets the information from the current document and cells
