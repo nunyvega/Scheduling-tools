@@ -1,0 +1,14 @@
+This code adds color to the first hours of the day (00 in local time) in Humanity's interface, specifically in the visual view.
+This is used so schedulers don't overschedule HEs that have availabilities that are hard to read.
+
+The script works in 2 steps:
+
+1- HEs details are added to the Google sheets file used for the purpose. THe sheets file already has the script added in this repository.
+This will automatically calculate and return the CSS code.
+
+2- The CSS code returned by the sheet then is pasted in the Tampermonkey script, that will push the CSS code to Humanity's interface.
+
+
+
+
+
