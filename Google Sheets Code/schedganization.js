@@ -37,7 +37,7 @@ function myFunction(nameToIdInput, maxHoursInput, prefWorkInput,prefWorkInput2,c
   var nameToIdResult;
   switch(nameToId){               
     case "Alvaro V(DR)": nameToIdResult = 3547614 ; break;
-   // All other HEs removed from the list for privacy concerns
+   // All other HEs removed from the list for privacy concerns, if you need them ask me in slack.
     default: nameToIdResult = "No ID Found"; break;
   }
   
