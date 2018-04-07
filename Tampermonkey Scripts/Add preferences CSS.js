@@ -41,7 +41,8 @@
     //There's one line per HE, in case there's an error in the code of one of them, it can be found here.
 
     //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-CSSWeek +=`/*Alvaro Ve (PA)*/#e_3547614::after{ display:inline-block;content:'4hMax 2HRow 1hX 4hX ';}#e_3547614{background-color:rgba(190, 92, 251,0.1) !important;border-right: 5px dashed #5e3cc4 !important;;}#e_3547614 .udrag{background-color: #ffeee0 !important;} `;CSSMonday +=`/*Aaron Portbury (PA)*/#d_3547614.day.dcol4 ,#d_3547614.day.dcol5 {background: rgba(253, 126, 20, 0.2)!important;} `;CSSTuesday +=`/*Aaron Portbury (PA)*/#d_3547614.day.dcol4 ,#d_3547614.day.dcol5 {background: rgba(253, 126, 20, 0.2)!important;} `;CSSWednesday +=`/*Aaron Portbury (PA)*/#d_3547614.day.dcol4 ,#d_3547614.day.dcol5 {background: rgba(253, 126, 20, 0.2)!important;} `;CSSThursday +=`/*Aaron Portbury (PA)*/#d_3547614.day.dcol4 ,#d_3547614.day.dcol5 {background: rgba(253, 126, 20, 0.2)!important;} `;CSSSunday+=`/*Aaron Portbury (PA)*/#d_3547614.day.dcol4 ,#d_3547614.day.dcol5 {background: rgba(253, 126, 20, 0.2)!important;} `;textForDiv.push("Part of the Atomic Guild^3547614");
+
+CSSWeek +=`/*Alvaro Vega (LE)*/#e_3967007::after{ display:inline-block;content:'6hMax 3hRow 1hX 4h✓  ❚❚✓';}#e_3967007{background-color:rgba(190, 92, 251,0.1) !important;;}#e_3967007 .udrag{background-color: #ffeee0 !important;}.dcol19#d_3967007{border: 5px solid #4a9abd !important;}`;
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
