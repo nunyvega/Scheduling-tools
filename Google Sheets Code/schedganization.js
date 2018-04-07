@@ -26,7 +26,7 @@ function myFunction(nameToIdInput, maxHoursInput, prefWorkInput,prefWorkInput2,c
   
   var nameToId = nameToIdInput.toString();
   var nameToIdResult;
-  switch(nameToId){               
+   switch(nameToId){               
 
     case "Alvaro Ve (DR)": nameToIdResult = 3547616 ; break;
     case "Alvaro Ve (DR)": nameToIdResult = 3547616 ; break;
@@ -683,9 +683,9 @@ function myFunction(nameToIdInput, maxHoursInput, prefWorkInput,prefWorkInput2,c
   
   // Pause preferences
   
-  if (pauseInput==="Yes") {
+  if (pauseInput==="No") {
     var pauseResult = " ❚❚✓";}
-  else if (pauseInput ==="No") {
+  else if (pauseInput ==="Yes") {
     var pauseResult = " ❚❚X"}
   else {
   pauseResult = ""}
