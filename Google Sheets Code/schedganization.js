@@ -20,16 +20,14 @@ to add the CSS code to the scheduling page.
 // variables for preferences in text
 
 
-function myFunction(nameToIdInput, maxHoursInput, prefWorkInput,prefWorkInput2,chatHoursInput, oneHourBlockInput, fourHoursBlockInput, businessInput, teamLeadInput, maxBizInput, onlyTicketsInput1, onlyTicketsInput2, onlyTicketsInput3, onlyTicketsInput4, onlyTicketsInput5, onlyTicketsInput6, onlyTicketsInput7, noBizInput1, noBizInput2, noBizInput3, noBizInput4, noBizInput5, noBizInput6, noBizInput7, requirementInTextInput, timeZoneInput, pauseInput, textTypeInput, dateSpecificInput) {
+function myFunction(nameToIdInput, maxHoursInput, prefWorkInput,prefWorkInput2,chatHoursInput, oneHourBlockInput, fourHoursBlockInput, businessInput, teamLeadInput, maxBizInput, onlyTicketsInput1, onlyTicketsInput2, onlyTicketsInput3, onlyTicketsInput4, onlyTicketsInput5, onlyTicketsInput6, onlyTicketsInput7, noBizInput1, noBizInput2, noBizInput3, noBizInput4, noBizInput5, noBizInput6, noBizInput7, requirementInTextInput, timeZoneInput, pauseInput, textTypeInput, dateSpecificInput, onlyChatInput) {
   
   //  Change name to userID. Names and IDs are not included for security reasons.
   
   var nameToId = nameToIdInput.toString();
   var nameToIdResult;
-   switch(nameToId){               
-
-    case "Alvaro Ve (DR)": nameToIdResult = 3547616 ; break;
-    case "Alvaro Ve (DR)": nameToIdResult = 3547616 ; break;
+  switch(nameToId){               
+    case "Alvaro Vega (DR)": nameToIdResult = 3547616 ; break;
     default: nameToIdResult = "No ID Found"; break;
   }
   
@@ -674,7 +672,7 @@ function myFunction(nameToIdInput, maxHoursInput, prefWorkInput,prefWorkInput2,c
     firstHour= "Error";}
     
     var cellSelector = ".dcol" + firstHour+ IdSelector ;
-    var timeZoneResult = cellSelector + "{border: 5px solid #4a9abd !important;}"; 
+    var timeZoneResult = cellSelector + "{border-left: 4.4px solid black !important;}"; 
     
     ;}
   else {
@@ -691,7 +689,19 @@ function myFunction(nameToIdInput, maxHoursInput, prefWorkInput,prefWorkInput2,c
   pauseResult = ""}
   
   
+  // Prefers to work only on chat
+  
+  if (onlyChatInput==="Yes") {
+    var onlyChatResult = "     color: purple; font-weight: bold;";}
+  
+  else {
+    var onlyChatResult = "";}
+  
+  
+  
   ///////////////////// ///////////////////////// ///////////////////// ///////////////////////// ///////////////////// ///////////////////////// 
+  
+  // Check if the text input is a requirement or a preference
   if (textTypeInput === "Requirement") {
     var textTypeResult = "*";}
   else {
@@ -704,7 +714,7 @@ function myFunction(nameToIdInput, maxHoursInput, prefWorkInput,prefWorkInput2,c
   // Converting preferences in text to an array
   // Formatting result to get the CSS output
   var finalResult= "CSSWeek +="+ "`" + "/*" + nameToIdInput + "*/" + "#e_"+nameToIdResult+ "::after"+ "{ display:inline-block;content:'"+ 
-    maxResult + chatHoursResult + oneHourBlockResult + fourHoursBlockResult + maxBizResult + pauseResult +"';" +"}"+ "#e_"+nameToIdResult+ "{"+ prefResult + 
+    maxResult + chatHoursResult + oneHourBlockResult + fourHoursBlockResult + maxBizResult + pauseResult +"';"+ onlyChatResult +"}"+ "#e_"+nameToIdResult+ "{"+ prefResult + 
       businessResult + teamLeadResult + ";" +"}"; if (prefResult2){ finalResult += "#e_"+nameToIdResult+ prefResult2 + timeZoneResult + "`"+";";} else {finalResult+= "`" + ";";}
   
   if (resultNoBiz1 !== " " || resultOnlyTickets1 !== " ") { 
@@ -764,7 +774,7 @@ function loop(){
   var activeSheet = app.getActiveSpreadsheet().getActiveSheet();
   //Check how many filled rows are in the document
   var numRows = activeSheet.getLastRow();
-  var activeRange = "B3:AE" + numRows;
+  var activeRange = "B3:AF" + numRows;
   var total = [];
   var loops = numRows - 1;
   var range = activeSheet.getRange(activeRange)
@@ -799,9 +809,10 @@ function loop(){
     var ABi = range.getCell(i,27).getValues().toString();
     var ACi = range.getCell(i,28).getValues().toString();
     var ADi = range.getCell(i,29).getValues().toString();
-    var AEi = range.getCell(i,30).getValues().toString();    
+    var AEi = range.getCell(i,30).getValues().toString();  
+    var AFi = range.getCell(i,31).getValues().toString();  
     //Run the big function with the values of the row, and return the result
-    total[i]= myFunction(Bi, Ci, Di,Ei, Fi, Gi, Hi, Ii, Ji, Li, Mi, Ni, Oi, Pi, Qi, Ri, Si, Ti, Ui, Vi, Wi, Xi, Yi, Zi,AAi, ABi, ACi, ADi, AEi)
+    total[i]= myFunction(Bi, Ci, Di,Ei, Fi, Gi, Hi, Ii, Ji, Li, Mi, Ni, Oi, Pi, Qi, Ri, Si, Ti, Ui, Vi, Wi, Xi, Yi, Zi,AAi, ABi, ACi, ADi, AEi, AFi)
   }
   return total;
 } 
