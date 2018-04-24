@@ -6,10 +6,6 @@
 // @author       Alvaro Vega
 // @match        https://automattic.humanity.com/*
 // @grant        none
-// @downloadURL  https://raw.githubusercontent.com/nunyvega/Scheduling-tools/master/Tampermonkey%20Scripts/Add%20preferences%20CSS.js
-// @updateURL    https://raw.githubusercontent.com/nunyvega/Scheduling-tools/master/Tampermonkey%20Scripts/Add%20preferences%20CSS.js
-
-
 // ==/UserScript==
 
 
