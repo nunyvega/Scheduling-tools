@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Push CSS Humanity
 // @namespace    https://github.com/nunyvega/Scheduling-tools/
-// @version      8.2
+// @version      8.3
 // @description  Include HEs preferences in Humanity
 // @author       Alvaro Vega
 // @match        https://automattic.humanity.com/*
@@ -17,8 +17,7 @@
 //------------------------------------------------------------------------------------------------------------------
 // 1 - ADD COLOURS TO THE GRID INDICATING AVAILABILITY PREFERENCES
 // 2 - ADD CONTENT ( TEXT AND COLOURS ) TO THE USER'S BOX IN THE GRID INDICATING PREFERENCES
-
-
+// FInal test auto update
 
 // Step one
 // Here we create the variables that will be added to the site:
