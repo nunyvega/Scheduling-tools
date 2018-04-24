@@ -1,11 +1,13 @@
 // ==UserScript==
 // @name         Push CSS Humanity
 // @namespace    https://github.com/nunyvega/Scheduling-tools/
-// @version      7
+// @version      8
 // @description  Include HEs preferences in Humanity
 // @author       Alvaro Vega
 // @match        https://automattic.humanity.com/*
 // @grant        none
+// @downloadURL  https://github.com/nunyvega/Scheduling-tools/blob/master/Tampermonkey%20Scripts/Add%20preferences%20CSS.js
+// @updateURL    https://github.com/nunyvega/Scheduling-tools/blob/master/Tampermonkey%20Scripts/Add%20preferences%20CSS.js
 // ==/UserScript==
 
 
