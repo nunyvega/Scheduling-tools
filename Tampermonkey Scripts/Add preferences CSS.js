@@ -210,7 +210,7 @@ CSSWeek +=`#e_3547629::after{ display:inline-block;content:'6hMax 2HRow 1h✓ 4h
 i.icon.icon-break.stafflist-break-icon.tti.j-shift-edit-break {display: none;}`
 +
                 // CSS properties to show who gives localized support
- `#e_3950626 .jump, #e_3547616 .jump, #e_3547628 .jump,#e_3562077 .jump,#e_3547568 .jump,#e_3547566 .jump, #e_3614800 .jump,#e_3547595 .jump, #e_3547629 .jump,#e_3547596 .jump,#e_3543890 .jump,#e_3592905 .jump, #e_3876844 .jump,#e_3547586 .jump, #e_3547631 .jump,#e_3547567 .jump, #e_3598707 .jump, #e_3547627 .jump,#e_3547579 .jump, #e_3784499 .jump,#e_3547630 .jump{border-bottom: 5px solid orange;}
+ `#e_3650895 .jump, #e_3950626 .jump, #e_3547616 .jump, #e_3547628 .jump,#e_3562077 .jump,#e_3547568 .jump,#e_3547566 .jump, #e_3614800 .jump,#e_3547595 .jump, #e_3547629 .jump,#e_3547596 .jump,#e_3543890 .jump,#e_3592905 .jump, #e_3876844 .jump,#e_3547586 .jump, #e_3547631 .jump,#e_3547567 .jump, #e_3598707 .jump, #e_3547627 .jump,#e_3547579 .jump, #e_3784499 .jump,#e_3547630 .jump{border-bottom: 5px solid orange;}
 `;
 
             node.id = "customCSS";
