@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Push CSS Humanity
 // @namespace    https://github.com/nunyvega/Scheduling-tools/
-// @version      8.5
+// @version      8.6
 // @description  Include HEs preferences in Humanity
 // @author       Alvaro Vega
 // @match        https://automattic.humanity.com/*
