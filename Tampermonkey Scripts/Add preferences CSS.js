@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Push CSS Humanity
 // @namespace    https://github.com/nunyvega/Scheduling-tools/
-// @version      8.3
+// @version      8.5
 // @description  Include HEs preferences in Humanity
 // @author       Alvaro Vega
 // @match        https://automattic.humanity.com/*
@@ -17,7 +17,8 @@
 //------------------------------------------------------------------------------------------------------------------
 // 1 - ADD COLOURS TO THE GRID INDICATING AVAILABILITY PREFERENCES
 // 2 - ADD CONTENT ( TEXT AND COLOURS ) TO THE USER'S BOX IN THE GRID INDICATING PREFERENCES
-// FInal test auto update
+
+
 
 // Step one
 // Here we create the variables that will be added to the site:
@@ -206,8 +207,10 @@ CSSWeek +=`#e_3547629::after{ display:inline-block;content:'6hMax 2HRow 1h✓ 4h
 .popup-parent:hover .popup, .popup-parent2:hover .popup, .popup-parent3:hover .popup {display: block;}
 .popup-parent3 {width-min:40px;right:0px;bottom:0px;position:absolute;width:40px;height:30px;background-image:url('http://icons.iconarchive.com/icons/elegantthemes/beautiful-flat/128/calendar-icon.png');background-position:center;background-size:65%;background-repeat:no-repeat;z-index:999;}
 #weeklist tr td {height:65px !important;}
-i.icon.icon-break.stafflist-break-icon.tti.j-shift-edit-break {display: none;}
-
+i.icon.icon-break.stafflist-break-icon.tti.j-shift-edit-break {display: none;}`
++
+                // CSS properties to show who gives localized support
+ `#e_3950626 .jump, #e_3547616 .jump, #e_3547628 .jump,#e_3562077 .jump,#e_3547568 .jump,#e_3547566 .jump, #e_3614800 .jump,#e_3547595 .jump, #e_3547629 .jump,#e_3547596 .jump,#e_3543890 .jump,#e_3592905 .jump, #e_3876844 .jump,#e_3547586 .jump, #e_3547631 .jump,#e_3547567 .jump, #e_3598707 .jump, #e_3547627 .jump,#e_3547579 .jump, #e_3784499 .jump,#e_3547630 .jump{border-bottom: 5px solid orange;}
 `;
 
             node.id = "customCSS";
