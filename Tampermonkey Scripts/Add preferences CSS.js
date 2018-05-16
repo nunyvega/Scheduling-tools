@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Push CSS Humanity
 // @namespace    https://github.com/nunyvega/Scheduling-tools/
-// @version      9.0
+// @version      9.1
 // @description  Include HEs preferences in Humanity
 // @author       Alvaro Vega
 // @match        https://automattic.humanity.com/*
@@ -304,29 +304,29 @@ i.icon.icon-break.stafflist-break-icon.tti.j-shift-edit-break {display: none;}`
 
 
         /*adds the code for the week + modifications for the day*/
-        if( dayInText.match('Monday')){
+        if( dayInText.startsWith('Mon')){
             dayCSSCode += CSSMonday;
         }
-        else if( dayInText.match('Tuesday')){
+        else if( dayInText.startsWith('Tue')){
             dayCSSCode += CSSTuesday;
         }
-        else if( dayInText.match('Wednesday')){
+        else if( dayInText.startsWith('Wed')){
             dayCSSCode += CSSWednesday;
         }
-        else if( dayInText.match('Thursday')){
+        else if( dayInText.startsWith('Thu')){
             dayCSSCode += CSSThursday;
         }
-        else if( dayInText.match('Friday')){
+        else if( dayInText.startsWith('Fri')){
             dayCSSCode += CSSFriday;
         }
-        else if( dayInText.match('Saturday')){
+        else if( dayInText.startsWith('Sat')){
             dayCSSCode += CSSSaturday;
         }
-        else if( dayInText.match('Sunday')){
+        else if( dayInText.startsWith('Sun')){
             dayCSSCode += CSSSunday;
         }
         else {
-            alert("No day determined");
+            console.log("No day determined");
         }
         addCSS(dayCSSCode);
     }
