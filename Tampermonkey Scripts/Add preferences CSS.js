@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Push CSS Humanity
 // @namespace    https://github.com/nunyvega/Scheduling-tools/
-// @version      9.1
+// @version      9.2
 // @description  Include HEs preferences in Humanity
 // @author       Alvaro Vega
 // @match        https://automattic.humanity.com/*
@@ -37,7 +37,7 @@
     var textForDiv = [];
     var textForDiv2 = [];
 //don't delete//
-CSSWeek +=`#e_3547616::after{ display:inline-block;content:'4hMax 1h✓ 4hX  ❚❚X';}#e_3547616{background-color:rgba(253, 126, 20, 0.13) !important;} `;
+CSSWeek +=`#e_3547616::after{ display:inline-block;content:'3hMax 1hRow 1h✓ 4hX  ❚❚X';}#e_3547616{background-color:rgba(253, 126, 20, 0.13) !important;} `;
 //don't delete//
     // Step two:
     /* CODE TO USE THIS WEEK  -  REPLACE THE VARIABLES UNDER THIS TEXT:*/
