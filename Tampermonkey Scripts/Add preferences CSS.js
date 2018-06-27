@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Push CSS Humanity
 // @namespace    https://github.com/nunyvega/Scheduling-tools/
-// @version      10.6
+// @version      10.8
 // @description  Include HEs preferences in Humanity
 // @author       Alvaro Vega
 // @match        https://automattic.humanity.com/*
@@ -151,7 +151,7 @@ CSSWeek +=`#e_3807107::after{ display:inline-block;content:'6hMax 3hRow 1h✓ 4h
 CSSWeek +=`#e_3546868::after{ display:inline-block;content:'4hMax 1h✓ 4h✓  ❚❚✓';}#e_3546868{background-color: rgba(253, 126, 20, 0.13) !important;border-right: 5px dashed #5e3cc4 !important;border-left: 10px solid #6cd6fc !important;;}`;
 CSSWeek +=`#e_3909450::after{ display:inline-block;content:'7hMax 1h✓ 4h✓  ❚❚✓';}#e_3909450{;}`;
 CSSWeek +=`#e_3547581::after{ display:inline-block;content:'6hMax 1h✓ 4h✓  ❚❚X';}#e_3547581{border-right: 5px dashed #5e3cc4 !important;border-left: 10px solid #6cd6fc !important;;}`;
-CSSWeek +=`#e_3924952::after{ display:inline-block;content:'6hMax 2HRow 1h✓ 4hX  ❚❚✓';}#e_3924952{background-color: rgba(253, 126, 20, 0.13) !important;;}`;
+CSSWeek +=`#e_3924952::after{ display:inline-block;content:'6hMax 2HRow 1h✓ 4hX  ❚❚✓';}#e_3924952{background-color: rgba(253, 126, 20, 0.13) !important;border-right: 5px dashed #5e3cc4 !important;;}#e_3924952 .udrag{background-color: #1068a72e !important;}.dcol05#d_3924952{border-left: 4.4px solid black !important;}`;
 CSSWeek +=`#e_3547549::after{ display:inline-block;content:'6hMax 3hRow 1hX 4h✓ MaxBiz5 ❚❚✓';}#e_3547549{background-color:rgba(190, 92, 251,0.1) !important;border-right: 5px dashed #5e3cc4 !important;;}#e_3547549 .udrag{background-color: #1068a72e !important;}.dcol06#d_3547549{border-left: 4.4px solid black !important;}`;CSSMonday +=` #d_3547549.day.dcol21 {background: rgba(190,75,219,.1);}`;CSSTuesday +=` #d_3547549.day.dcol21 {background: rgba(190,75,219,.1);}`;CSSWednesday +=` #d_3547549.day.dcol21 {background: rgba(190,75,219,.1);}`;CSSThursday +=` #d_3547549.day.dcol21 {background: rgba(190,75,219,.1);}`;CSSFriday +=` #d_3547549.day.dcol19 ,#d_3547549.day.dcol20 ,#d_3547549.day.dcol21 {background: rgba(190,75,219,.1);}`;
 CSSWeek +=`#e_3547554::after{ display:inline-block;content:' 2HRow  4hX MaxBiz2';}#e_3547554{background-color:rgba(190, 92, 251,0.1) !important;border-right: 5px dashed #5e3cc4 !important;;}#e_3547554 .udrag{background-color: #ffeee0 !important;}.dcol07#d_3547554{border-left: 4.4px solid black !important;}`;CSSMonday +=` #d_3547554.day.dcol14 ,#d_3547554.day.dcol15 ,#d_3547554.day.dcol16 {background: rgba(190,75,219,.1);}`;CSSTuesday +=` #d_3547554.day.dcol14 ,#d_3547554.day.dcol15 ,#d_3547554.day.dcol16 {background: rgba(190,75,219,.1);}`;CSSWednesday +=` #d_3547554.day.dcol14 ,#d_3547554.day.dcol15 ,#d_3547554.day.dcol16 {background: rgba(190,75,219,.1);}`;CSSThursday +=` #d_3547554.day.dcol14 ,#d_3547554.day.dcol15 ,#d_3547554.day.dcol16 {background: rgba(190,75,219,.1);}`;CSSFriday +=` #d_3547554.day.dcol14 ,#d_3547554.day.dcol15 ,#d_3547554.day.dcol16 {background: rgba(190,75,219,.1);}`;CSSSaturday +=` #d_3547554.day.dcol14 ,#d_3547554.day.dcol15 ,#d_3547554.day.dcol16 {background: rgba(190,75,219,.1);}`;CSSSunday+=` #d_3547554.day.dcol14 ,#d_3547554.day.dcol15 ,#d_3547554.day.dcol16 {background: rgba(190,75,219,.1);}`;
 CSSWeek +=`#e_3594536::after{ display:inline-block;content:'6hMax 2HRow 1h✓ 4h✓  ❚❚✓';}#e_3594536{;}`;
@@ -191,9 +191,8 @@ CSSWeek +=`#e_3546872::after{ display:inline-block;content:'4hMax 1hX 4h✓  ❚
 CSSWeek +=`#e_4092446::after{ display:inline-block;content:'5hMax 1hRow 1h✓ 4h✓  ❚❚✓';}#e_4092446{background-color: rgba(253, 126, 20, 0.13) !important;;}#e_4092446 .udrag{background-color:#f9efff !important;}.dcol22#d_4092446{border-left: 4.4px solid black !important;}`;
 CSSWeek +=`#e_4129456::after{ display:inline-block;content:'4hMax 2HRow 1h✓ 4hX  ❚❚✓';}#e_4129456{background-color:rgba(190, 92, 251,0.1) !important;;}#e_4129456 .udrag{background-color: #ffeee0 !important;}.dcol19#d_4129456{border-left: 4.4px solid black !important;}`;CSSMonday +=`#d_4129456.day.dcol10 ,#d_4129456.day.dcol11 ,#d_4129456.day.dcol12 {background: rgba(253, 126, 20, 0.2)!important;} `;CSSTuesday +=`#d_4129456.day.dcol10 ,#d_4129456.day.dcol11 ,#d_4129456.day.dcol12 {background: rgba(253, 126, 20, 0.2)!important;} `;CSSWednesday +=`#d_4129456.day.dcol10 ,#d_4129456.day.dcol11 ,#d_4129456.day.dcol12 {background: rgba(253, 126, 20, 0.2)!important;} `;CSSThursday +=`#d_4129456.day.dcol10 ,#d_4129456.day.dcol11 ,#d_4129456.day.dcol12 {background: rgba(253, 126, 20, 0.2)!important;} `;CSSFriday +=`#d_4129456.day.dcol10 ,#d_4129456.day.dcol11 ,#d_4129456.day.dcol12 {background: rgba(253, 126, 20, 0.2)!important;} `;textForDiv.push("*Currently, I'm onboarding. So will do the core work for 4 hours.^4129456");
 CSSWeek +=`#e_4123179::after{ display:inline-block;content:'6hMax 2HRow 1h✓ 4hX  ❚❚X';}#e_4123179{background-color: rgba(253, 126, 20, 0.13) !important;;}#e_4123179 .udrag{background-color:#f9efff !important;}.dcol22#d_4123179{border-left: 4.4px solid black !important;}`;
-
-
-   //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ 
+    //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
     // Step three:
     // Functions to detect the day, and insert a CSS code acording to that
